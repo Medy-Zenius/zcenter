@@ -1,0 +1,70 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+      <br>
+  <form action="/user-change-password" method="POST">
+    <div class="row">
+       <div class="small-4">
+          <div class="row">
+            <div class="small-6 columns">
+              <label for="right-label" class="right inline">ID</label>
+            </div>
+            <div class="small-6 columns">
+              <input type="text"  value="{{id}}" disabled>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline">Password Lama</label>
+            </div>
+            <div class="small-9 columns">
+              <input type="password" name="opw" value="" placehorder="Password Lama">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline">Password Baru</label>
+            </div>
+            <div class="small-9 columns">
+              <input type="password" name="npw" value="" placehorder="Password Baru">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline">Confirm Password</label>
+            </div>
+            <div class="small-9 columns">
+              <input type="password" name="npw1" value="" placehorder="Password Baru">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right"></label>
+            </div>
+            <div class="small-9 columns">
+              <input type="submit"  value="Ganti Password" >
+            </div>
+          </div>
+        </div>
+    </div>
+
+   </form>
+
+{% endblock %}

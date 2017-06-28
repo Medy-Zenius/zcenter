@@ -1,0 +1,50 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+       <script>
+           var vhadir=0;
+           var vtotal=0;
+       </script>
+       <br>
+        <h3 align="center">Data Presensi Siswa-Kelas</h3>
+        <p align="center">{{kelas.kode}} - {{kelas.hari}} - {{kelas.keterangan}} <br>
+           Bulan {{bulan}}
+        </p>
+
+
+        <div class="row" align="center">
+            <table>
+                <thead>
+                    <th>No</th>
+                    <th>Kode</th>
+                    <th>Tanggal</th>
+                    <th>Tutor</th>
+                    <th>Aktifitas</th>
+                    <th>Keterangan</th>
+                </thead>
+
+                <tbody>
+                   {% for datum in data %}
+                        <tr>
+                                <td><script>document.write(vtotal+1);</script>
+                                <td>{{datum.kode}}</td>
+                                <td>{{datum.date}}</td>
+                                <td>{{datum.tutor}}</td>
+                                <td>{{datum.activities}}</td>
+                                <td>{% if datum.notes %}
+                                    <script>vhadir += 1;</script>
+                                    HADIR {% endif %}</td>
+                               <script>vtotal += 1;</script>
+                        </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+            <div class=row align="center">
+                <script>
+                    document.write("Kehadiran = " + vhadir + " dari " + vtotal + " pertemuan.");
+                </script>
+            </div>
+
+        </div>
+
+{% endblock %}

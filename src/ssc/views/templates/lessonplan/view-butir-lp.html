@@ -1,0 +1,33 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <h3 align="center">Lesson Plan - Butir Pelajaran</h3>
+    <div class="row" align="center">
+        <form method="POST" action="/view-proset" target="_blank">
+        <table>
+            <thead>
+                <th>Butir Pelajaran</th>
+                <th>Kode Konten</th>
+                <th>Problem Set</th>
+            </thead>
+
+            <tbody>
+
+                {% for butir in butirs %}
+                    <tr>
+                        <td>{{butir.keterangan}}</td>
+                        <td>{{butir.kodekonten}}</td>
+                        <td>
+                        {% if butir.proset %}
+                                <input type="submit" name="file" value="{{butir.proset}}" />
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        </form>
+      </div>
+{% endblock %}

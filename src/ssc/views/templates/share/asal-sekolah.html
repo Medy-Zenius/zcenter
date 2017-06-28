@@ -1,0 +1,29 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <script>var vnomer=1;</script>
+    <br>
+    <div class="row">
+        <h3 align="center">Asal Sekolah</h3>
+    </div>
+
+    <div class="row">
+        <table align="center">
+            <thead>
+                <th>No</th>
+                <th>Nama Sekolah</th>
+                <th>Jumlah</th>
+            </thead>
+            <tbody>
+            {% for datum in data %}
+            <tr>
+                <td><script>document.write(vnomer);</script></td>
+                <td>{{datum.school}}</td>
+                <td>{{datum.cschool}}</td>
+                <script>vnomer += 1;</script>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

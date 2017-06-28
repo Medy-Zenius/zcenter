@@ -1,0 +1,38 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+       <br>
+        <h3 align="center">Data Test</h3>
+        <p align="center">ZEN  {{notes}}</p>
+        {% for nam in nama %}
+            <p align="center">{{nam.name}}</p>
+        {% endfor %}
+        <div class="row" align="center">
+        <table>
+            <thead>
+                <th>Nomer</th>
+                <th>Tanggal</th>
+                <th>MatPel</th>
+                <th>Deskripsi</th>
+                <th>Nilai</th>
+            </thead>
+
+            <tbody>
+                {% for test in tests %}
+                    <tr>
+                        <td>
+                            <form method="POST" action="edit-test-siswa" >
+                                <input type="submit" value="{{test.nomer}}" name="nomer">
+                            <form>
+                        </td>
+                        <td>{{test.date}}</td>
+                        <td>{{test.matpel}}</td>
+                        <td>{{test.description}}</td>
+                        <td>{{test.score}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        </div>
+{% endblock %}

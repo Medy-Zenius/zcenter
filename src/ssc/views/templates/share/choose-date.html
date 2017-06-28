@@ -1,0 +1,66 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div>
+        <SCRIPT LANGUAGE="JavaScript">
+           function kirim(){
+              var t=document.df.tgl.value;var b=document.df.bln.value; var h=document.df.thn.value;
+              document.df.tanggal.value = h + "-" + twochar(b) + "-" + twochar(t);
+              document.df.submit();
+           }
+       </SCRIPT>
+
+      <form action="{{action}}" method="POST" name="df">
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tanggal</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="tgl" tabindex="3">
+                              <script>
+                                  for (i=1; i<=31; i++)
+                                      {
+                                           document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="bln" tabindex="4">
+                              <script>
+                                  for (i=1; i<=12; i++)
+                                      {
+                                          document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select name="thn" tabindex="5">
+                              <option value="1000">Tahun</option>
+                              {% for th in tahun %}
+                                 <option value="{{th.tahun}}">{{th.tahun}}</option>
+                              {% endfor %}
+                        </select>
+                    </div>
+                    <div class="large-4 columns"></div>
+                </div>
+          </div>
+
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="button" value="SUBMIT"  tabindex="3" onClick="kirim()">
+                    </div>
+                </div>
+           </div>
+
+              <input type="hidden" name="tanggal">
+
+      </form>
+    </div>
+{% endblock %}

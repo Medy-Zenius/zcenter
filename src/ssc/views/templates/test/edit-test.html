@@ -1,0 +1,70 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+    <p align="center">Edit Nilai Test</p>
+    <div>
+        {% for data in datatests %}
+        <form action="/update-test" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Nomer</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  value="{{data.nomer}}" disabled>
+                    </div>
+                    <div class="large-7 columns">
+                        <input type="hidden" value="{{data.nomer}}" name="nomer">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">No. Zenius</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name="notes" value="{{data.notes}}"  disabled>
+                    </div>
+                    <div class="large-7 columns">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Kode Test</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="kodetest" value="{{data.kodetest}}"  disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Nilai Test</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="score" value="{{data.score}}"  tabindex="1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="large-10 columns" align="center">
+                <input  type="submit" value="Update Nilai Test" tabindex="2">
+              </div>
+            </div>
+        </form>
+        <div class="row">
+            <form method="POST" action="/hapus-test-std">
+                <input type="submit" value="HAPUS DATA TEST INI!" />
+                <input type="hidden" name="nomer" value="{{data.nomer}}" />
+                <input type="hidden" name="notes" value="{{data.notes}}" />
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+    <p align="center">Edit Biaya Siswa</p>
+    <div>
+        {% for data in datasis %}
+        <form action="/keu-update-biaya" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">ZEN</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  value="{{data.zen}}" disabled>
+                        <input type="hidden" value="{{data.zen}}" name="notes">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Nama</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="nama" value="{{data.name}}"  disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">FO</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="id" value="{{data.idf}}"  disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Tanggal Daftar</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="dtreg" value="{{data.date}}"  disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Program</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="program" value="{{data.prg}}" tabindex="1" >
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Bulan Start</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="start" value="{{data.bulan}}" tabindex="2" >
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Total Biaya</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="fee" value="{{data.fee}}"  tabindex="3">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Sisa</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="sisa" value="{{data.sisa}}"  tabindex="4">
+                    </div>
+                </div>
+            </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input  type="submit" value="Update Data Biaya" tabindex="5">
+                    </div>
+                </div>
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+{% endblock %}

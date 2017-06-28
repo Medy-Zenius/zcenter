@@ -1,0 +1,84 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+   <br>
+    <h3 align="center">Informasi Siswa</h3>
+   <table align="center">
+     {% for student in students %}
+        <tr>
+            <td>Nama Siswa</td>
+            <td>{{student.name}}</td>
+        </tr>
+        <tr>
+            <td>Nomer Zenius</td>
+            <td>{{student.notes}}</td>
+        </tr>
+        <tr>
+            <td>Tempat Lahir</td>
+            <td>{{student.pbirth}}</td>
+        </tr>
+        <tr>
+           <td>Tanggal Lahir</td>
+           <td>{{student.dbirth}}</td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td>{{student.address}}</td>
+        </tr>
+        <tr>
+            <td>Telepon</td>
+            <td>{{student.phone}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{student.email}}</td>
+        </tr>
+        <tr>
+            <td>Kelas</td>
+            <td>{{student.level}}</td>
+        </tr>
+        <tr>
+            <td>Kode Jurusan</td>
+            <td>{{student.major}}</td>
+        </tr>
+        <tr>
+            <td>Asal Sekolah</td>
+            <td>{{student.school}}</td>
+        </tr>
+        <tr>
+            <td>Kode Program</td>
+            <td>{{student.program}}</td>
+        </tr>
+        <tr>
+            <td>Start (Bulan)</td>
+            <td>{{student.start}}</td>
+       </tr>
+        <tr>
+            <td>Nama Ortu / Wali</td>
+            <td>{{student.pname}}</td>
+        </tr>
+        <tr>
+            <td>Telepon Ortu / Wali</td>
+            <td>{{student.pphone}}</td>
+        </tr>
+        <tr>
+            <td>Alamat Ortu / Wali</td>
+            <td>{{student.paddress}}</td>
+        </tr>
+        <tr>
+            <td>Email Ortu / Wali</td>
+            <td>{{student.pemail}}</td>
+        </tr>
+        <tr>
+            <td>Pekerjaan Ortu / Wali</td>
+            <td>{{student.pjob}}</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>{{student.pass}}</td>
+        </tr>
+     {% endfor %}
+    </table>
+    </div>
+
+
+{% endblock %}

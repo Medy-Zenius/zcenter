@@ -1,0 +1,62 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+  <br>
+   <p align="center">Lesson Plan - {{kelas}} - {{kurikulum}} - {{bidang}}</p>
+  <form method="POST" action="/input-lp">
+     <div class="large-12 columns">
+        <div class="row">
+            <div class="large-2 columns">
+              <label for="right-label" class="right inline">Kode Subjek</label>
+            </div>
+            <div class="large-2 columns">
+                <input type="text"  name="kodesubjek" placeholder="kode" tabindex="1">
+            </div>
+            <div class="large-8 columns">
+            </div>
+        </div>
+      </div>
+      <div class="large-12 columns">
+        <div class="row">
+            <div class="large-2 columns">
+              <label for="right-label" class="right inline">Deskripsi</label>
+            </div>
+            <div class="large-10 columns">
+                <input type="text"  name="deskripsi" placeholder="Deskripsi" tabindex="2">
+            </div>
+        </div>
+      </div>
+      <div class="large-12 columns">
+        <div class="row">
+            <div class="large-2 columns">
+              <label for="right-label" class="right inline">Kode konten</label>
+            </div>
+            <div class="large-10 columns">
+                <input type="text"  name="kodekonten" placeholder="Kode Konten" tabindex="3">
+            </div>
+        </div>
+      </div>
+
+    <div class="large-12 columns">
+        <div class="row">
+            <div class="large-2 columns">
+
+            </div>
+            <div class="large-6 columns">
+                <input type="submit"  value="Submit" tabindex="4"/>
+            </div>
+        </div>
+    </div>
+    <div style="visibility:hidden">
+        <input type="text" name="kelas" value="{{kodekelas}}">
+    </div>
+    <div style="visibility:hidden">
+        <input type="text" name="kurikulum" value="{{kodekuri}}">
+    </div>
+    <div style="visibility:hidden">
+        <input type="text" name="bidangstudi" value="{{kodebidang}}">
+    </div>
+  </form>
+
+{% endblock %}
+

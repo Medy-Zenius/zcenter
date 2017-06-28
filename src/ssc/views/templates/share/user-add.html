@@ -1,0 +1,65 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <div>
+        <h3>Registrasi User</h3>
+        <form action="/user-add" method="POST">
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kode Cabang</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{kode}}" tabindex="1" name="kode" >
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Status</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{stat}}" tabindex="2" name="stat" >
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nama</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{name}}" tabindex="3" name="nama" >
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Email</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{email}}" tabindex="4" name="email" >
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">User ID</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{id}}" tabindex="5" name="id" >
+                    </div>
+                </div>
+           </div>
+           <div class="error">{{id-error}}</div>
+
+           <div>
+                <input  tabindex="6" type="submit" value="Create Account">
+          </div>
+       </form>
+</div>
+{% endblock %}

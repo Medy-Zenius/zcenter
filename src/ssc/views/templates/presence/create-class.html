@@ -1,0 +1,114 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <div>
+        <form action="/create-class" method="POST" >
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kelas</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <select name="kodekelas" tabindex="1">
+                            {% for datum in data %}
+                            <option value="{{datum.kode}}">{{datum.hari}} - {{datum.keterangan}}</option>
+                            {% endfor%}
+                        </select>
+                    </div>
+               </div>
+          </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Waktu</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="date" tabindex="1">
+                              <option value="0">Tanggal</option>
+                              <script>
+                                  for (i=1; i<=31; i++)
+                                      {
+                                           document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="month" tabindex="2">
+                              <option value="0">Bulan</option>
+                              <script>
+                                  for (i=1; i<=12; i++)
+                                      {
+                                          document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select name="year" tabindex="3">
+                              <option value="1000">Tahun</option>
+                              {% for th in tahun %}
+                                 <option value="{{th.tahun}}">{{th.tahun}}</option>
+                              {% endfor %}
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="hour" tabindex="4">
+                              <option value="0">Jam</option>
+                              <script>
+                                  for (i=1; i<=24; i++)
+                                      {
+                                          document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="minute" tabindex="5">
+                              <option value="0">Menit</option>
+                              <script>
+                                  for (i=1; i<=60; i++)
+                                      {
+                                          document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+
+                </div>
+          </div>
+
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tutor</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="tutor" value="" tabindex="6">
+                    </div>
+               </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Aktifitas</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="activities" value="" tabindex="7">
+                    </div>
+               </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-10 columns">
+                         <input tabindex="8" type="submit"  value="SUBMIT" />
+                    </div>
+                </div>
+          <div>
+        </form>
+    </div>
+{% endblock %}

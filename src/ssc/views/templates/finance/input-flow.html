@@ -1,0 +1,66 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+   <br>
+    <div>
+        <form action="{{action}}" method="POST">
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Transaksi</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <select name="kode">
+                            {% for datum in data %}
+                              <option value="{{datum.code}}">{{datum.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Keterangan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" name="keterangan">
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Jumlah Rp.</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  id="fee" name="jumlah" value="" />
+                        <script>
+                            document.getElementById("fee").onchange=function(){displayTxt()};
+                            function displayTxt()
+                                {
+                                    var x=convert();
+                                    document.getElementById("tjumlah").innerHTML=x;
+                                }
+                        </script>
+                    </div>
+                     <div  class="large-8 columns">
+                        <div id="tjumlah"></div>
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="submit" value="SUBMIT">
+                    </div>
+                </div>
+           </div>
+
+        </form>
+
+    </div>
+
+{% endblock %}

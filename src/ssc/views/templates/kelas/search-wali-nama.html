@@ -1,0 +1,29 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <h3 align="center">Klik Nomer untuk {{keterangan}}</h3>
+    <div class="row" align="center">
+        <table>
+            <thead>
+                <th>Nomer</th>
+                <th>Nama</th>
+                <th>ID</th>
+            </thead>
+
+            <tbody>
+                <form method="POST" action="{{action}}" >
+                {% for wali in walis %}
+                    <tr>
+                        <td>
+                           <input type="submit" value="{{wali.nomer}}" name="nomer">
+                        </td>
+                        <td>{{wali.name}}</td>
+                        <td>{{wali.id}}</td>
+                    </tr>
+                {% endfor %}
+                <form>
+            </tbody>
+        </table>
+      </div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+    <p align="center">Edit Transaksi Pembayaran</p>
+    <div>
+        {% for transaction in transactions %}
+        <form action="/keu-update-transactions" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">No Transaksi</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  value="{{transaction.notrans}}" disabled>
+                    </div>
+                    <div class="large-7 columns" style="visibility:hidden">
+                        <input type="text" value="{{transaction.notrans}}" name="notrans">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">No. Zenius</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name="notes" value="{{transaction.notes}}"  disabled>
+                    </div>
+                    <div class="large-7 columns">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Cicilan ke</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="cicilan" value="{{transaction.cicilan}}"  tabindex="1">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Besar Cicilan</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="biaya" value="{{transaction.biaya}}"  tabindex="2">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Tanggal Transaksi</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="dtrans" value="{{transaction.dtrans}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Penerima</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="id" value="{{transaction.id}}" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="large-10 columns" align="center">
+                <input  type="submit" value="Update Transaksi" tabindex="3">
+              </div>
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+{% endblock %}

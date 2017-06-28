@@ -1,0 +1,89 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+    <p align="center">Lesson Plan - Edit Butir Pelajaran</p>
+    <div>
+        {% for but in butir %}
+        <form action="/update-lp" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Nomer</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  value="{{but.nomer}}" disabled>
+                    </div>
+                    <div class="large-7 columns" style="visibility:hidden">
+                       <input type="text" value="{{but.nomer}}" name="nomer">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Kode</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  value="{{but.kode}}" name="kode" tabindex="1">
+                    </div>
+                    <div class="large-7 columns"></div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Keterangan</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="keterangan" value="{{but.keterangan}}" tabindex="2">
+                    </div>
+
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Kode Konten</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name="kodekonten" value="{{but.kodekonten}}" tabindex="3">
+                    </div>
+                    <div class="large-7 columns">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Problem Set</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name="proset" value="{{but.proset}}" tabindex="4">
+                    </div>
+                    <div class="large-7 columns">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">DP</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name="dp" value="{{but.dp}}" tabindex="4">
+                    </div>
+                    <div class="large-7 columns">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="large-10 columns" align="center">
+                <input  type="submit" value="Update Lesson Plan" tabindex="5">
+              </div>
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+        <br>
+        <h3 align="center">Data Transaksi Siswa</h3>
+        <div class="row" align="center">
+        <table>
+            <thead>
+                <th>Zen</th>
+                <th>Nama</th>
+                <th>Total</th>
+                <th>Sisa</th>
+                <th>NTrans</th>
+                <th>Ke</th>
+                <th>Jumlah</th>
+                <th>Tanggal</th>
+                <th>Tlp Ortu</th>
+
+            </thead>
+
+            <tbody>
+                {% for datum in data %}
+                    <tr>
+                        <td>{{datum.notes}}</td>
+                        <td>{{datum.name}}</td>
+                        <td>{{datum.fee}}</td>
+                        <td>{{datum.sisa}}</td>
+                        <td>{{datum.notrans}}</td>
+                        <td>{{datum.ke}}</td>
+                        <td>Rp.{{datum.biaya}}</td>
+                        <td>{{datum.tanggal}}</td>
+                        <td>{{datum.pphone}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        </div>
+
+{% endblock %}

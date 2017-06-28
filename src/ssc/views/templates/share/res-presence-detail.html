@@ -1,0 +1,31 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <div>
+        <h3 align="center">Informasi Pertemuan Kelas</h3>
+        <div class="row">
+            {% for kdp in kodeper %}
+                <p align="center">Tanggal {{kdp.date}}</p>
+                <p align="center">Tutor {{kdp.tutor}}</p>
+                <p align="center">Aktivitas {{kdp.activities}}</p>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <table align="center">
+                <thead>
+                    <th>ZEN</th>
+                    <th>Nama</th>
+                </thead>
+                <tbody>
+                    {% for detail in details %}
+                    <tr>
+                        <td>{{detail.std}}</td>
+                        <td>{{detail.name}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

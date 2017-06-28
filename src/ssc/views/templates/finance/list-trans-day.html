@@ -1,0 +1,47 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+        <script> var vno=1; </script>
+        <br>
+        <h3 align="center">Laporan Transaksi</h3>
+        <p align="center">{{keterangan}}</p>
+        <div class="row" align="center">
+
+        <table>
+            <thead>
+                <th>No</th>
+                <th>Keterangan</th>
+                <th>Debit</th>
+                <th>Kredit</th>
+                <th>ID</th>
+            </thead>
+
+            <tbody>
+                <tr><td></td><td><strong>Pendapatan</strong></td><td></td><td></td></tr>
+                {% for datumin in datain %}
+                    <tr>
+                        <td><script>document.write(vno);</script></td>
+                        <td>{{datumin.keterangan}}</td>
+                        <td>Rp. {{datumin.jumlah}} ,-</td>
+                        <td></td>
+                        <td>{{datumin.id}}</td>
+                    </tr>
+                    <script>vno += 1;</script>
+                {% endfor %}
+                <tr><td></td><td><strong>Pengeluaran</strong></td><td></td><td></td></tr>
+                {% for datumout in dataout %}
+                    <tr>
+                        <td><script>document.write(vno);</script></td>
+                        <td>{{datumout.keterangan}}</td>
+                        <td></td>
+                        <td>Rp. {{datumout.jumlah}} ,-</td>
+                        <td>{{datumout.id}}</td>
+                    </tr>
+                    <script>vno += 1;</script>
+                {% endfor %}
+                <tr><td></td><td><strong>Total</strong></td><td>Rp. {{totalin}} ,-</td><td>Rp. {{totalout}} ,.<td></td></td></tr>
+                <tr><td></td><td><strong>Saldo</strong></td><td></td><td><strong>Rp. {{saldo}} ,.</strong><td></td></td></tr>
+            </tbody>
+        </table>
+        </div>
+{% endblock %}

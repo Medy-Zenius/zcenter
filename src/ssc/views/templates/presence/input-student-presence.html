@@ -1,0 +1,66 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div>
+        <form action="/input1-student-presence" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">KELAS</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{kelas}}" disabled>
+                    </div>
+                </div>
+             </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tanggal</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{dataper.date}}" disabled>
+                    </div>
+                </div>
+             </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tutor</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{dataper.tutor}}" disabled>
+                    </div>
+                </div>
+             </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Aktifitas</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{dataper.activities}}" disabled>
+                    </div>
+                </div>
+             </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">ZEN</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="" name="notes" tabindex="1">
+                    </div>
+                    <div class="large-8 columns">
+                        <input  tabindex="2" type="submit" value="Submit" >
+                    </div>
+                </div>
+             </div>
+             <input type="hidden" value="{{kelas}}" name="kelas">
+             <input type="hidden" value="{{code}}" name="code">
+             <input type="hidden" value="{{dataper.date}}" name="date">
+             <input type="hidden" value="{{dataper.tutor}}" name="tutor">
+             <input type="hidden" value="{{dataper.activities}}" name="activities">
+        </form>
+    </div>
+{% endblock %}

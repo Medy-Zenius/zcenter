@@ -1,0 +1,277 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <SCRIPT LANGUAGE="JavaScript">
+       function kirim(){
+          var t=document.df.dbirth.value;var b=document.df.mbirth.value; var h=document.df.ybirth.value;
+
+          document.df.birth.value = h + "-" + twochar(b) + "-" + twochar(t);
+
+        //document.df.submit();
+          document.getElementById('df').submit();
+       }
+    </SCRIPT>
+
+    <div>
+        <form action="/daftar" method="POST"  name="df" id="df">
+          <h3>Siswa</h3>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nama</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="name" value="{{name}}" tabindex="1">
+                    </div>
+                </div>
+          </div>
+          <div>{{name-error}}</div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tempat Lahir</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pbirth" value="" tabindex="2">
+                    </div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tanggal Lahir</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="dbirth" tabindex="3">
+                              <script>
+                                  for (i=1; i<=31; i++)
+                                      {
+                                           document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="mbirth" tabindex="4">
+                              <script>
+                                  for (i=1; i<=12; i++)
+                                      {
+                                          document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select class="form-control" name="ybirth" tabindex="5">
+                              <option value="1000"></option>
+                              <script>
+                                  for (i=1990; i<=2014; i++)
+                                      {
+                                          document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-4 columns"></div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Alamat *</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="address" value="{{address}}" tabindex="6">
+                    </div>
+                </div>
+          </div>
+          <div>{{address-error}}</div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">No Telpon *</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="phone" value="{{phone}}" tabindex="7">
+                    </div>
+                </div>
+          </div>
+          <div>{{phone-error}}</div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Email</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="email" value="" tabindex="8">
+                    </div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kelas</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <select name="level" tabindex="9">
+                              <option value="0"> </option>
+                              <script>
+                                  for (i=1; i<=13; i++)
+                                      {
+                                          document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Jurusan</label>
+                    </div>
+                    <div class="large-3 columns">
+                        <select  name="major" tabindex="10">
+                              {% for koju in kojur %}
+                                   <option value="{{koju.kode}}">{{koju.jurusan}}</option>
+                              {% endfor %}
+                        </select>
+                    </div>
+                    <div class="large-7 columns"></div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Asal Sekolah</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <select name="school" tabindex="11">
+                              <option value="TIDAK MEMILIH">TIDAK MEMILIH</option>
+                              {% for namas in namasek %}
+                                   <option value="{{namas.nama}}">{{namas.nama}}</option>
+                              {% endfor %}
+                        </select>
+                    </div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Program</label>
+                    </div>
+                    <div class="large-3 columns">
+                        <select name="program" tabindex="12">
+                              {% for program in programs %}
+                                   <option value="{{program.code}}">{{program.description}}</option>
+                              {% endfor %}
+                        </select>
+                    </div>
+                    <div class="large-1 columns">
+                      <label for="right-label" class="right inline">Start</label>
+                    </div>
+                    <div class="large-3 columns">
+                        <select name="start" tabindex="13">
+                              <option value="0">Tidak Memilih</option>
+                              <option value="1">Januari</option>
+                              <option value="2">Februari</option>
+                              <option value="3">Maret</option>
+                              <option value="4">April</option>
+                              <option value="5">Mei</option>
+                              <option value="6">Juni</option>
+                              <option value="7">Juli</option>
+                              <option value="8">Agustus</option>
+                              <option value="9">September</option>
+                              <option value="10">Oktober</option>
+                              <option value="11">November</option>
+                              <option value="12">Desember</option>
+                        </select>
+                    </div>
+                    <div class="large-3 columns"></div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Biaya (Rp)</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  id="fee" name="fee" value="" tabindex="14">
+                        <script>
+                            document.getElementById("fee").onchange=function(){displayTxt()};
+                            function displayTxt()
+                                {
+                                    var x=convert();
+                                    document.getElementById("txt").innerHTML=x;
+                                }
+                        </script>
+                    </div>
+                    <div  class="large-8 columns">
+                        <div  id="txt"></div>
+                    </div>
+                </div>
+          </div>
+
+          <h3>Orang tua / Wali</h3>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nama</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pname" value="" tabindex="15">
+                    </div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Alamat</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="paddress" value="" tabindex="16">
+                    </div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nomer Telpon</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pphone" value="" tabindex="17">
+                    </div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Email</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pemail" value="" tabindex="18">
+                    </div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Pekerjaan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pjob" value="" tabindex="19">
+                    </div>
+                </div>
+          </div>
+
+          <div>
+            <input tabindex="20" type="button" value="Daftarkan !" onClick="kirim()"/>
+          </div>
+
+            <input  type="hidden" name="birth" />
+
+        </form>
+    </div>
+{% endblock %}

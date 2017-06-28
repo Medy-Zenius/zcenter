@@ -1,0 +1,38 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+    <div>
+        <h3 align="center">Daftar Siswa Asuhan</h3>
+        <p align="center">Klik ZEN untuk {{keterangan}} !</p>
+        <div align="center">
+            <form method="POST" action="{{action}}">
+                <table>
+                    <thead>
+                        <th>ZEN</th>
+                        <th>Nama</th>
+                        <th>Kode Cabang</th>
+                    </thead>
+                    <tbody>
+                        {% for siswa in siswas %}
+                        <tr>
+                            <td>
+                                <input type="submit" value="{{siswa.zen}}" name="notes"/>
+                            </td>
+                            <td>
+                                {{siswa.name}}
+                            </td>
+                            <td>
+                                {{siswa.kocab}}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,111 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+   <br>
+    <div>
+        <SCRIPT LANGUAGE="JavaScript">
+           function kirim(){
+              var x=parseInt(document.df.sisa1.value);
+              var y=parseInt(document.df.fee.value);
+              document.df.sisa.value = x-y;
+            //alert(document.df.sisa.value);
+              document.df.submit();
+           }
+       </SCRIPT>
+
+        <form action="/payment" method="POST" name="df" target="_blank">
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Zen</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="{{notes}}" disabled>
+                    </div>
+                    <div class="large-8 columns" style="visibility:hidden">
+                        <input type="text" name="notes" value="{{notes}}">
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nama Siswa</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{name}}" disabled>
+                        <input type="hidden" name="name" value="{{name}}">
+                    </div>
+                </div>
+           </div>
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Total Biaya</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name="total" value="{{total}}"  disabled>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Sisa Cicilan</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name="sisa1" value="{{sisanya}}" disabled>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Cicilan ke</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <select name="cicilan" tabindex="1">
+                          <option value="{{ncicilan}}" selected>{{ncicilan}}</option>
+                          <script>
+                              for (i=1; i<=12; i++)
+                                  {
+                                      document.write("<option value=" + i + ">" + i + "</option>");
+                                  }
+                          </script>
+                        </select>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+          </div>
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Biaya (Rp)</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  id="fee" name="fee" value="" tabindex="2">
+                        <script>
+                            document.getElementById("fee").onchange=function(){displayTxt()};
+                            function displayTxt()
+                                {
+                                    var x=convert();
+                                    document.getElementById("txt").innerHTML=x;
+                                }
+                        </script>
+                    </div>
+                    <div  class="large-8 columns">
+                        <div  id="txt"></div>
+                    </div>
+                </div>
+          </div>
+
+          <div>
+                <input type="button" value="Masukkan Pembayaran !"  tabindex="3" onClick="kirim()">
+          </div>
+              <input type="hidden" name="sisa">
+        </form>
+
+    </div>
+
+{% endblock %}

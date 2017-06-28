@@ -1,0 +1,55 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+       <SCRIPT LANGUAGE="JavaScript">
+            function kirim(mp){
+                document.pageform.hal.value = mp;
+                //document.pageform.submit();
+                document.getElementById('pageform').submit();
+            }
+        </SCRIPT>
+       <br>
+        <h3 align="center">Data Presensi</h3>
+        <p align="center">ZEN  {{notes}} - {{name}}</p>
+
+        <div class="row" align="center">
+        <table>
+            <thead>
+                <th>Tanggal</th>
+                <th>Tutor</th>
+                <th>Aktivitas</th>
+            </thead>
+
+            <tbody>
+                {% for presence in presences %}
+                    <tr>
+                        <td>{{presence.date}}</td>
+                        <td>{{presence.tutor}}</td>
+                        <td>{{presence.activities}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        </div>
+        <div class="row" align="center">
+        <form action="{{action}}" method="POST" name="pageform" id="pageform">
+        <script>
+            var last=Math.ceil({{rows}}/10);
+            var halaman={{page}}+1;
+            //document.write({{rows}});
+            if ({{page}} > 0) {
+              document.write("<input type='submit' value='PREV' onClick='kirim({{page}}-1)'>");
+            }
+            document.write("   halaman " + halaman + " dari " + last + "   ");
+            if ({{page}} < last-1) {
+              document.write("<input type='submit' value='NEXT' onClick='kirim({{page}}+1)'>");
+            }
+
+        </script>
+            <input type="hidden"  name="hal">
+            <input type="hidden" name="nama" value="{{name}}" />
+            <input type="hidden" name="notes" value="{{notes}}" />
+    </form>
+    </div>
+{% endblock %}

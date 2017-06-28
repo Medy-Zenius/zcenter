@@ -1,0 +1,39 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div>
+        <form action="/input1-student-test" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kode</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{code}}" disabled>
+                        <input type="hidden" value="{{code}}" name="code">
+                    </div>
+                </div>
+             </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">ZEN</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="" name="notes" tabindex="1">
+                    </div>
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nilai</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="" name="score" tabindex="2">
+                    </div>
+                    <div class="large-4 columns">
+                        <input  tabindex="3" type="submit" value="Submit" >
+                    </div>
+                </div>
+             </div>
+        </form>
+    </div>
+
+{% endblock %}

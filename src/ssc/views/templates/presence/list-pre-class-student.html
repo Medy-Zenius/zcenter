@@ -1,0 +1,25 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+       <br>
+        <h3 align="center">Data Presensi Kelas</h3>
+        <p align="center">{{kelas}}</p>
+        <p align="center">{{dataper.date}} - {{dataper.tutor}} - {{dataper.activities}}</p>
+        <div class="row" align="center">
+            <table>
+                <thead>
+                    <th>ZEN</th>
+                    <th>NAMA</th>
+                </thead>
+
+                <tbody>
+                   {% for sis in siswa %}
+                        <tr>
+                           <td>{{sis.notes}}</td>
+                           <td>{{sis.name}}</td>
+                        </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+        </div>
+{% endblock %}

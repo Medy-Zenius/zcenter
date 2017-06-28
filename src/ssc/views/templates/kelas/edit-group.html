@@ -1,0 +1,74 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <h3>Edit Kelas</h3>
+    <form action="/update-group" method="POST">
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Kode Kelas</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name"kode" value="{{kode}}" disabled>
+                    </div>
+                    <div class="large-8 columns" style="visibility:hidden">
+                        <input type="text" value="{{kode}}" name="kode">
+                    </div>
+                </div>
+              </div>
+
+          {% for group in groups %}
+
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Kelas</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="{{group.level}}" name="level" tabindex="1">
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+              </div>
+              <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Waktu (Hari)</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{group.hari}}" name="hari" tabindex="2">
+                    </div>
+                </div>
+              </div>
+              <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Keterangan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{group.keterangan}}" name="keterangan" tabindex="3">
+                    </div>
+                </div>
+                <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Wali</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{group.wali}}" name="wali" tabindex="4">
+                    </div>
+                </div>
+              </div>
+              <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns"></div>
+                    <div class="large-10 columns">
+                        <input  type="submit" value="Update Kelas !" tabindex="5">
+                    </div>
+                </div>
+              </div>
+        </form>
+        {% endfor %}
+
+{% endblock %}

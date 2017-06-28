@@ -1,0 +1,80 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div>
+        <form action="/test-date" method="POST" >
+           <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Waktu</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="date" tabindex="1">
+                              <option value="0">Tanggal</option>
+                              <script>
+                                  for (i=1; i<=31; i++)
+                                      {
+                                           document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select  name="month" tabindex="2">
+                              <option value="0">Bulan</option>
+                              <script>
+                                  for (i=1; i<=12; i++)
+                                      {
+                                          document.write("<option value=" + i + ">" + i + "</option>");
+                                      }
+                              </script>
+                        </select>
+                    </div>
+                    <div class="large-2 columns">
+                        <select name="year" tabindex="3">
+                              <option value="1000">Tahun</option>
+                              {% for th in tahun %}
+                                 <option value="{{th.tahun}}">{{th.tahun}}</option>
+                              {% endfor %}
+                        </select>
+                    </div>
+                    <div class="large-4 columns">
+                        <div>
+                            <input tabindex="4" type="submit"  value="SUBMIT" />
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </form>
+    </div>
+
+    <div class="row" align="center">
+
+        <table>
+            <thead>
+                <th>KT</th>
+                <th>Tanggal</th>
+                <th>MatPel</th>
+                <th>Deskripsi</th>
+            </thead>
+
+            <tbody>
+            {% for kodetest in kodetests %}
+            <tr>
+                <td><form action="/input-student-test" method="POST">
+                        <div>
+                            <input type="submit" value="{{kodetest.kode}}" name="code">
+                        </div>
+                    </form>
+                </td>
+                <td>{{kodetest.date}}</td>
+                <td>{{kodetest.matpel}}</td>
+                <td>{{kodetest.description}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}

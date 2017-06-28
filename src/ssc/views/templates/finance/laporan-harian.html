@@ -1,0 +1,33 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div>
+        <h3 align="center">Laporan Harian</h3>
+        <p align="center">tanggal  {{date}}</p>
+        <p align="center">pelapor {{user}}</p>
+        {% for jml in jumlah %}
+            <p align="center">Total transaksi Rp. {{jml.sum}} ,-</p>
+        {% endfor %}
+
+        <div class="row">
+            <table align="center">
+                <thead>
+                    <th>NTrans</th>
+                    <th>Nomer Zenius</th>
+                    <th>Cicilan ke</th>
+                    <th>Sejumlah</th>
+                </thead>
+                <tbody>
+                    {% for transaction in transactions %}
+                        <tr>
+                            <td> {{transaction.notrans}}
+                            <td> {{transaction.notes}} </td>
+                            <td> {{transaction.cicilan}} </td>
+                            <td> Rp. {{transaction.biaya}} ,- </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

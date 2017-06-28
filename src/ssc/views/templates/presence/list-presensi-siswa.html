@@ -1,0 +1,46 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+       <br>
+        <h3 align="center">Data Presensi</h3>
+        <p align="center">ZEN  {{notes}}</p>
+        {% for nam in nama %}
+            <p align="center">{{nam.name}}</p>
+        {% endfor %}
+        <p align="center">Klik Nomer = Hapus data ! </p>
+        <div class="row" align="center">
+            <form method="POST" action="/delete-presence" >
+
+            <table>
+                <thead>
+                    <th>Nomer</th>
+                    <th>Tanggal</th>
+                    <th>Tutor</th>
+                    <th>Aktifitas</th>
+                </thead>
+
+                <tbody>
+                        {% for presence in presencies %}
+                        <tr>
+
+                                <td>
+                                   <input type="submit" value="{{presence.nomer}}" name="nomer">
+                                </td>
+                                <td>{{presence.date}}</td>
+                                <td>{{presence.tutor}}</td>
+                                <td>{{presence.activities}}</td>
+
+
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                <input type="hidden" value="{{notes}}" name="notes">
+            </div>
+
+        <form>
+        </div>
+{% endblock %}
+
+
