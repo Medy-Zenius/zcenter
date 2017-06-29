@@ -12,10 +12,12 @@
             ))
 
 (defroutes home-routes
-  (GET "/" [] (layout/render "/home/index.html"))
-  (GET "/home-login-siswa" [] (layout/render "/home/loginsis.html"))
+  (GET "/" [] (layout/render "home/index.html"))
+  (GET "/home-login-siswa" [] (layout/render "home/loginsis.html"))
   (POST "/login-siswa" [zen pw]
         (member/loginsis zen pw))
+  (GET "/home-contact" [] (layout/render "home/contact.html"))
+
   (GET "/zeniusmax" [] (layout/render "home/zeniusmax.html"))
   (GET "/filosofi" [] (layout/render "home/filosofi.html"))
   (GET "/tujuan" [] (layout/render "home/tujuan.html"))

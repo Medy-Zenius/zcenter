@@ -18,7 +18,7 @@
                (session/put! :branch (vuser :kocab))
                (session/put! :nama (vuser :name))
                (session/put! :pass pw)
-               (layout/render "/home/student.html"))
+               (layout/render "home/student.html"))
            (response/redirect "/"))))
 
 (defn login [act]

@@ -23,7 +23,7 @@
   :ring {:handler ssc.handler/app
          :init ssc.handler/init
          :destroy ssc.handler/destroy
-         :port 3000}
+         :port 28572}
   :aot :all
   :profile
   {:production
