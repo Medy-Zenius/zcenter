@@ -9,6 +9,7 @@
             [ring.util.anti-forgery :refer :all]
             [ring.util.response :refer [file-response]]
             [ssc.models.member :as member]
+            [ssc.models.message :as message]
             ))
 
 (defroutes home-routes
@@ -17,6 +18,10 @@
   (POST "/login-siswa" [zen pw]
         (member/loginsis zen pw))
   (GET "/home-contact" [] (layout/render "home/contact.html"))
+  (POST "/home-komentar" [nama email telpon komen]
+        (message/komentar nama email telpon komen))
+  (GET "/home-zenedu" []
+       (layout/render "home/zenedu.html"))
 
   (GET "/zeniusmax" [] (layout/render "home/zeniusmax.html"))
   (GET "/filosofi" [] (layout/render "home/filosofi.html"))

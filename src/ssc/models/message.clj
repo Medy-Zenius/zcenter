@@ -44,3 +44,22 @@
            :pesans (db/get-data (str "select tanggal,isi,status from pesan where notes='" no "'
                                      order by tanggal DESC LIMIT 20") 2)
            }))
+
+(defn komentar
+  "simpan komentar dari contact page"
+  [nama email telpon komen]
+  (if (or (= nama "") (= email "") (= telpon "") (= komen ""))
+      (layout/render "home/contact.html" {:nama nama
+                                          :email email
+                                          :telpon telpon
+                                          :komen komen
+                                          :error "Isian ada yang kosong!"})
+      (try (db/insert-data "komentar"
+                {:nama nama
+                 :email email
+                 :telpon telpon
+                 :komen komen
+                 :tanggal (java.sql.Timestamp. (.getTime (java.util.Date.)))})
+           (layout/render "pesan-baru.html" {:pesan "Terima kasih, komentar/saran sudah terkirim ..."})
+      (catch Exception ex
+           (layout/render "pesan-baru.html" {:pesan (str "Gagal Kirim komentar/saran ! error: " ex)})))))

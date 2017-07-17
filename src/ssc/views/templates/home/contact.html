@@ -14,7 +14,6 @@
 
     <!-- Links -->
     <link rel="stylesheet" href="css/rd-mailform-1.css"/>
-    <link rel="stylesheet" href="css/google-map.css">
 
     <!--JS-->
     <script src="js/jquery.js"></script>
@@ -111,7 +110,7 @@
 
                     <!-- Navbar Brand -->
                     <div class="navbar-header">
-                        <img src="images/logo_ZC.png" width="250">
+                        <img src="images/logo.png" width="250">
                         <h6>
                           BIMBEL ONSITE & ONLINE
                         </h6>
@@ -224,54 +223,58 @@
                           <h4>PERTANYAAN/SARAN</h4>
 
                           <!-- RD Mailform -->
-                          <form class='rd-mailform rd-mailform-1' method="post" action="bat/rd-mailform.php"
+                          <form class='rd-mform' method="post" action="/home-komentar"
                                 data-type="contact">
                               <div class="form-group">
                                   <label data-add-placeholder data-add-icon for="mailform-input-name">
                                       <input id="mailform-input-name"
-                                             placeholder="* Your full name here:"
+                                             placeholder="* Nama lengkap:"
                                              type="text"
-                                             name="name"
-                                             data-constraints="@NotEmpty @LettersOnly"/>
+                                             name="nama"
+                                             value="{{nama}}"/>
                                   </label>
                               </div>
 
                               <div class="form-group">
                                   <label data-add-placeholder data-add-icon for="mailform-input-email">
                                       <input id="mailform-input-email"
-                                             placeholder="* Enter your e-mail"
+                                             placeholder="* E-mail:"
                                              type="text"
                                              name="email"
-                                             data-constraints="@NotEmpty @Email"/>
+                                             value="{{email}}"/>
                                   </label>
                               </div>
 
                               <div class="form-group">
                                   <label data-add-placeholder data-add-icon for="mailform-input-phone">
                                       <input id="mailform-input-phone"
-                                             placeholder="Your telephone here:"
+                                             placeholder="Telpon/HP:"
                                              type="text"
-                                             name="phone"
-                                             data-constraints="@Phone"/>
+                                             name="telpon"
+                                             value="{{telpon}}"/>
                                   </label>
                               </div>
 
                               <div class="form-group textarea">
                                   <label data-add-placeholder for="mailform-input-textarea">
-                        <textarea id="mailform-input-textarea"
-                                  name="message"
-                                  placeholder="* Your comments & questions:"
-                                  data-constraints="@NotEmpty"></textarea>
+                                  <textarea id="mailform-input-textarea"
+                                  name="komen"
+                                  placeholder="* Komentar/saran:"
+                                  >{{komen}}</textarea>
                                   </label>
                               </div>
-
+                              <div class="form-group text-danger">
+                               <p>
+                                 {{error}}
+                                </p>
+                              </div>
 
                               <div class="form-group btn-wr">
-                                  <span class="required">* Required Fields</span>
+                                  <span class="required">* Harus diisi!</span>
                                   <button class="btn btn-danger" type="submit">Submit</button>
-
+                                  <!--
                                   <div class="mfInfo"></div>
-
+                                  -->
                               </div>
                           </form>
                           <!-- END RD Mailform -->
@@ -292,7 +295,7 @@
     <footer>
         <div class="contain-wrap-1">
             <div class="container">
-                <p class="rights">Book Publishing Company &#169; <span id="copyright-year"></span> All rights
+                <p class="rights">Zenius Center &#169; <span id="copyright-year"></span> All rights
                     reserved.<br>
                     Terms of use &#124; <a href="index-6.html">Privacy Policy</a>
                 </p>

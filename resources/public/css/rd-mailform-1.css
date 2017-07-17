@@ -9,7 +9,7 @@
 =========================================================*/
 /* MF
 ========================================================*/
-.rd-mailform {
+.rd-mform {
   position: relative;
   text-align: left;
   margin-left: auto;
@@ -17,97 +17,97 @@
   margin-top: 29px;
 }
 @media (min-width: 1200px) {
-  .rd-mailform {
+  .rd-mform {
     margin-top: 79px;
   }
 }
-.rd-mailform fieldset {
+.rd-mform fieldset {
   border: none;
   line-height: 0;
 }
-.rd-mailform * {
+.rd-mform * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.rd-mailform .form-group {
+.rd-mform .form-group {
   position: relative;
   display: inline-block;
   margin-bottom: 0;
   width: 100%;
 }
-.rd-mailform .form-group > label {
+.rd-mform .form-group > label {
   width: 100%;
   font-weight: 400;
 }
-.rd-mailform .form-group + .form-group {
+.rd-mform .form-group + .form-group {
   margin-left: 22px;
   margin-top: 19px;
 }
 @media (min-width: 768px) {
-  .rd-mailform .form-group + .form-group {
+  .rd-mform .form-group + .form-group {
     margin-top: 0;
   }
 }
-.rd-mailform .form-group.btn-wr {
+.rd-mform .form-group.btn-wr {
   text-align: center;
   margin-left: 0;
   width: 100%;
 }
-.rd-mailform .form-group.btn-wr .btn {
+.rd-mform .form-group.btn-wr .btn {
   margin-top: 20px;
 }
 @media (min-width: 992px) {
-  .rd-mailform .form-group.btn-wr .btn {
+  .rd-mform .form-group.btn-wr .btn {
     float: left;
     margin-top: 0;
   }
 }
-.rd-mailform .form-group.btn-wr .required {
+.rd-mform .form-group.btn-wr .required {
   font-size: 18px;
   line-height: 1;
   display: block;
   color: #222;
 }
 @media (min-width: 992px) {
-  .rd-mailform .form-group.btn-wr .required {
+  .rd-mform .form-group.btn-wr .required {
     display: inline-block;
     margin-left: 50px;
     margin-top: 18px;
   }
 }
 @media (min-width: 992px) {
-  .rd-mailform .form-group.btn-wr {
+  .rd-mform .form-group.btn-wr {
     text-align: left;
   }
 }
-.rd-mailform .form-group + .form-group:not(.btn-wr):not(.textarea):nth-child(4) {
+.rd-mform .form-group + .form-group:not(.btn-wr):not(.textarea):nth-child(4) {
   margin-left: 0;
   float: left;
 }
 @media (max-width: 991px) {
-  .rd-mailform .form-group {
+  .rd-mform .form-group {
     width: 100%;
   }
-  .rd-mailform .form-group + .form-group:not(.btn-wr):not(.textarea) {
+  .rd-mform .form-group + .form-group:not(.btn-wr):not(.textarea) {
     margin-left: 0;
     margin-top: 15px;
   }
 }
-.rd-mailform .form-group.btn-wr {
+.rd-mform .form-group.btn-wr {
   margin-top: 19px;
 }
-.rd-mailform .form-group.textarea {
+.rd-mform .form-group.textarea {
   width: 100%;
   margin-left: 0;
   margin-top: 7px;
 }
-.rd-mailform .form-group:first-child {
+.rd-mform .form-group:first-child {
   margin-top: 0;
 }
-.rd-mailform .form-group input,
-.rd-mailform .form-group select,
-.rd-mailform .form-group textarea {
+.rd-mform .form-group input,
+.rd-mform .form-group select,
+.rd-mform .form-group textarea {
   display: block;
   width: 100%;
   margin: 0;
@@ -128,38 +128,38 @@
   height: 57px;
   letter-spacing: 0.06em;
 }
-.rd-mailform .form-group input:-moz-placeholder,
-.rd-mailform .form-group select:-moz-placeholder,
-.rd-mailform .form-group textarea:-moz-placeholder {
+.rd-mform .form-group input:-moz-placeholder,
+.rd-mform .form-group select:-moz-placeholder,
+.rd-mform .form-group textarea:-moz-placeholder {
   color: #e1e1e1;
   opacity: 1;
 }
-.rd-mailform .form-group input::-webkit-input-placeholder,
-.rd-mailform .form-group select::-webkit-input-placeholder,
-.rd-mailform .form-group textarea::-webkit-input-placeholder {
+.rd-mform .form-group input::-webkit-input-placeholder,
+.rd-mform .form-group select::-webkit-input-placeholder,
+.rd-mform .form-group textarea::-webkit-input-placeholder {
   color: #e1e1e1;
   opacity: 1;
 }
-.rd-mailform .form-group input::-moz-placeholder,
-.rd-mailform .form-group select::-moz-placeholder,
-.rd-mailform .form-group textarea::-moz-placeholder {
+.rd-mform .form-group input::-moz-placeholder,
+.rd-mform .form-group select::-moz-placeholder,
+.rd-mform .form-group textarea::-moz-placeholder {
   color: #e1e1e1;
   opacity: 1;
 }
-.rd-mailform .form-group input:-ms-input-placeholder,
-.rd-mailform .form-group select:-ms-input-placeholder,
-.rd-mailform .form-group textarea:-ms-input-placeholder {
+.rd-mform .form-group input:-ms-input-placeholder,
+.rd-mform .form-group select:-ms-input-placeholder,
+.rd-mform .form-group textarea:-ms-input-placeholder {
   color: #e1e1e1;
   opacity: 1;
 }
 @media (min-width: 1200px) {
-  .rd-mailform .form-group input,
-  .rd-mailform .form-group select,
-  .rd-mailform .form-group textarea {
+  .rd-mform .form-group input,
+  .rd-mform .form-group select,
+  .rd-mform .form-group textarea {
     font-size: 18px;
   }
 }
-.rd-mailform .form-group textarea {
+.rd-mform .form-group textarea {
   resize: none;
   overflow: auto;
   height: 300px;
@@ -167,12 +167,12 @@
   outline: none;
 }
 @media (max-width: 1365px) {
-  .rd-mailform .form-group {
+  .rd-mform .form-group {
     margin-top: 30px;
   }
 }
 @media (min-width: 992px) {
-  .rd-mailform .form-group {
+  .rd-mform .form-group {
     width: 31%;
   }
 }
