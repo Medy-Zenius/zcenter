@@ -1,0 +1,18 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div class="container">
+        <form method="POST" action="{{action}}">
+            <div class="large-3 columns">
+                <input type="text" name="id" placeholder="id" />
+            </div>
+            <div class="large-3 columns">
+                <input type="password" name="pass" placeholder="Password" />
+            </div>
+            <div class="large-3 columns">
+                <input type="submit"  value="SUBMIT" />
+            </div>
+              <div class="large-3 columns"></div>
+        </form>
+    </div>
+{% endblock %}

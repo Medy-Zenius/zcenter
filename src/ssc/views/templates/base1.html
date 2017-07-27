@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="format-detection" content="telephone=no"/>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Authors</title>
+    <link rel="icon" href="images/zcicon.ico" type="image/x-icon">
+    <title>Zenius Center</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -30,8 +30,9 @@
     <script src='js/device.min.js'></script>
 </head>
 <body>
-{% block header %}
+
 <div class="page text-center">
+{% block header %}
     <!--========================================================
                               HEADER
     =========================================================-->
@@ -43,42 +44,74 @@
                     <!-- Navbar -->
                     <nav class="navbar navbar-static-top text-left">
                         <ul class="navbar-nav sf-menu" data-type="navbar">
-                            <li>
-                                <a href="./">Home</a>
+                            <li class="active">
+                                <a href="/">Home</a>
                             </li>
+                            <!--
                             <li class="dropdown">
-                                <a href="index-1.html">About us</a>
+                                <a href="index-1.html">TENTANG KAMI</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">Overview</a>
+                                        <a href="/home-zenuedu">Zenius Education</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/home-zencenter">Zenius Center</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            -->
+                            <li class="dropdown">
+                                <a href="index-1.html">Program</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/home-sd1-5">SD Kelas 1 - 5</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/home-sd6">SD Kelas 6</a>
                                     </li>
                                     <li>
-                                        <a href="#">Publication</a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="#">Latest</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Popular</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Archive</a>
-                                            </li>
-                                        </ul>
+                                        <a href="/home-smp7-8">SMP Kelas 7 dan 8</a>
                                     </li>
                                     <li>
-                                        <a href="#">History</a>
+                                        <a href="/home-smp9">SMP Kelas 9</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/home-sma10-11">SMA Kelas 10 - 11</a>
+                                    </li>
+                                    <li>
+                                        <a href="/home-sma12">SMA Kelas 12</a>
+                                    </li>
+                                    <li>
+                                        <a href="/home-alumni">Alumni SMA</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">Lokasi</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/lokasi-cijantung">Cijantung Jakarta</a>
+                                    </li>
+                                    <li>
+                                        <a href="/lokasi-cinere">Cinere Depok</a>
+                                    </li>
+                                    <li>
+                                        <a href="/lokasi-depok">D Mall Depok</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/lokasi-dukuh-zamrud">Dukuh Zamrud Bekasi</a>
+                                    </li>
+                                    <li>
+                                        <a href="/lokasi-fatmawati">Fatmawati Jakarta</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="index-2.html">Books</a>
-                            </li>
-                            <li>
-                                <a href="index-4.html">News</a>
-                            </li>
-                            <li>
-                                <a href="index-5.html">Contacts</a>
+                                <a href="/home-contact">KONTAK</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#">Login</a>
@@ -87,14 +120,13 @@
                                         <a href="/home-login-siswa">Siswa</a>
                                     </li>
                                     <li>
-                                        <a href="#">Non Siswa</a>
+                                        <a href="/login-nonsiswa">Non Siswa</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </nav>
                     <!-- END Navbar -->
-
                 </div>
             </section>
 
@@ -108,10 +140,10 @@
 
                     <!-- Navbar Brand -->
                     <div class="navbar-header">
-                        <img src="images/logo_ZC.png" width="250">
-                    <h6>
-                      BIMBEL ONSITE & ONLINE
-                    </h6>
+                        <img src="images/logo.png" width="250">
+                        <h6>
+                          BIMBEL ONSITE & ONLINE
+                        </h6>
                     </div>
                     <!-- END Navbar Brand -->
 
@@ -121,26 +153,25 @@
         </div>
     </header>
 
-
  {% endblock %}
  {% block content %}
  {% endblock %}
-
+ {% block footer %}
     <!--========================================================
                             FOOTER
     =========================================================-->
     <footer>
-        <div class="contain-wrap">
+        <div class="contain-wrap-1">
             <div class="container">
-                <p class="rights">Book Publishing Company &#169; <span id="copyright-year"></span> All rights
+                <p class="rights">Zenius Center &#169; <span id="copyright-year"></span> All rights
                     reserved.<br>
-                    Terms of use &#124; <a href="index-6.html">Privacy Policy</a>
+                    Terms of use &#124; <a href="#">Privacy Policy</a>
                 </p>
             </div>
         </div>
     </footer>
 </div>
-
+{% endblock %}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>

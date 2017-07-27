@@ -19,14 +19,15 @@
   (pdf
     [{}
      [:spacer 9]
-     [:image {:xscale 0.1 :yscale 0.1}
-      "resources/public/img/logo ZC.jpg"]
-     [:paragraph {:align :center :style :bold :size 14} "TANDA TERIMA"]
+     ;[:image {:xscale 0.1 :yscale 0.1}
+     ; "resources/public/img/logozc.png"]
+     [:paragraph {:align :center :style :bold :size 12} "ZENIUS CENTER"]
+     [:paragraph {:align :center :style :bold :size 13} "TANDA TERIMA"]
      ;[:line]
      [:spacer]
-     [:paragraph {:align :left :style :bold :size 12} (str "Telah diterima pembayaran ke - " ci) ]
+     [:paragraph {:align :left :style :bold :size 11} (str "Telah diterima pembayaran ke - " ci) ]
      [:spacer]
-     [:pdf-table {:border :false :cell-border :false :size 12}
+     [:pdf-table {:border :false :cell-border :false :size 11}
        [25 40]
        ["Atas nama" nm]
        ["Nomer Zenius" no]
@@ -35,20 +36,21 @@
        ["Sisa Cicilan" (str "Rp." sisa ",-")]
      ]
      [:spacer]
-     [:paragraph {:style :bold :size 12} "Yang menerima,"]
+     [:paragraph {:style :bold :size 11} "Yang menerima,"]
      [:spacer 3]
-     [:paragraph {:style :bold :size 12} (str "(" usr ")")]
+     [:paragraph {:style :bold :size 11} (str "(" usr ")")]
      [:spacer 2]
      [:line]
      [:spacer 2]
 
-     [:image {:xscale 0.1 :yscale 0.1}
-      "resources/public/img/logo ZC.jpg"]
-     [:paragraph {:align :center :style :bold :size 14} "TANDA TERIMA"]
+     ;[:image {:xscale 0.1 :yscale 0.1}
+     ; "resources/public/img/logozc.png"]
+     [:paragraph {:align :center :style :bold :size 12} "ZENIUS CENTER"]
+     [:paragraph {:align :center :style :bold :size 13} "TANDA TERIMA"]
      [:spacer]
-     [:paragraph {:align :left :style :bold :size 12} (str "Telah diterima pembayaran ke - " ci) ]
+     [:paragraph {:align :left :style :bold :size 11} (str "Telah diterima pembayaran ke - " ci) ]
      [:spacer]
-     [:pdf-table {:border false :cell-border false :size 12}
+     [:pdf-table {:border false :cell-border false :size 11}
        [25 40]
        ["Atas nama" nm]
        ["Nomer Zenius" no]
@@ -57,9 +59,9 @@
        ["Sisa Cicilan" (str "Rp." sisa ",-")]
      ]
      [:spacer]
-     [:paragraph {:style :bold :size 12} "Yang menerima,"]
+     [:paragraph {:style :bold :size 11} "Yang menerima,"]
      [:spacer 3]
-     [:paragraph {:style :bold :size 12} (str "(" usr ")")]
+     [:paragraph {:style :bold :size 11} (str "(" usr ")")]
 
     ]
    out

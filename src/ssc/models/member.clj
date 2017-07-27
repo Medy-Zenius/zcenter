@@ -11,7 +11,9 @@
             ))
 
 (defn loginsis [zen pw]
-  (let [vuser (db/get-data (str "select * from students where notes ='" (read-string zen) "'") 1)]
+  (let [vuser (if (= zen "")
+                nil
+              (db/get-data (str "select * from students where notes ='" (read-string zen) "'") 1))]
        (if (and vuser (= pw (vuser :pass)))
            (do (session/put! :id (vuser :notes))
                (session/put! :status 1)
