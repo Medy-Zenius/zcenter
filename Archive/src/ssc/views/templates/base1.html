@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="images/zcicon.ico" type="image/x-icon">
+    <title>Zenius Center</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Links -->
+
+    <!--JS-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src='js/device.min.js'></script>
+</head>
+<body>
+
+<div class="page text-center">
+{% block header %}
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header>
+        <div id="stuck_container" class="stuck_container">
+            <section class="bg-white">
+                <div class="container">
+
+                    <!-- Navbar -->
+                    <nav class="navbar navbar-static-top text-left">
+                        <ul class="navbar-nav sf-menu" data-type="navbar">
+                            <li class="active">
+                                <a href="/">Home</a>
+                            </li>
+                            <!--
+                            <li class="dropdown">
+                                <a href="index-1.html">TENTANG KAMI</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/home-zenuedu">Zenius Education</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/home-zencenter">Zenius Center</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            -->
+                            <li class="dropdown">
+                                <a href="index-1.html">Program</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/home-sd1-5">SD Kelas 1 - 5</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/home-sd6">SD Kelas 6</a>
+                                    </li>
+                                    <li>
+                                        <a href="/home-smp7-8">SMP Kelas 7 dan 8</a>
+                                    </li>
+                                    <li>
+                                        <a href="/home-smp9">SMP Kelas 9</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/home-sma10-11">SMA Kelas 10 - 11</a>
+                                    </li>
+                                    <li>
+                                        <a href="/home-sma12">SMA Kelas 12</a>
+                                    </li>
+                                    <li>
+                                        <a href="/home-alumni">Alumni SMA</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">Lokasi</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/lokasi-cijantung">Cijantung Jakarta</a>
+                                    </li>
+                                    <li>
+                                        <a href="/lokasi-cinere">Cinere Depok</a>
+                                    </li>
+                                    <li>
+                                        <a href="/lokasi-depok">D Mall Depok</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/lokasi-dukuh-zamrud">Dukuh Zamrud Bekasi</a>
+                                    </li>
+                                    <li>
+                                        <a href="/lokasi-fatmawati">Fatmawati Jakarta</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/home-contact">KONTAK</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">Login</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/home-login-siswa">Siswa</a>
+                                    </li>
+                                    <li>
+                                        <a href="/login-nonsiswa">Non Siswa</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- END Navbar -->
+                </div>
+            </section>
+
+            <section class="skew skew__deg-1 skew__deg-1-tm skew__deg-1-pt-0">
+                <div class="skew_sub-1 skew_sub-1-2">
+                    <div class="skew_sub-2 skew_sub-2-2 skew_sub-2-tm">
+                        <div class="skew_bg bg-primary skew_bg-2"></div>
+                    </div>
+                </div>
+                <div class="container">
+
+                    <!-- Navbar Brand -->
+                    <div class="navbar-header">
+                        <img src="images/logo.png" width="250">
+                        <h6>
+                          BIMBEL ONSITE & ONLINE
+                        </h6>
+                    </div>
+                    <!-- END Navbar Brand -->
+
+                </div>
+            </section>
+
+        </div>
+    </header>
+
+ {% endblock %}
+ {% block content %}
+ {% endblock %}
+ {% block footer %}
+    <!--========================================================
+                            FOOTER
+    =========================================================-->
+    <footer>
+        <div class="contain-wrap-1">
+            <div class="container">
+                <p class="rights">Zenius Center &#169; <span id="copyright-year"></span> All rights
+                    reserved.<br>
+                    Terms of use &#124; <a href="#">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/tm-scripts.js"></script>
+<!-- </script> -->
+
+</body>
+</html>

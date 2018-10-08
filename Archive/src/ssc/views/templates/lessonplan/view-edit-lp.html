@@ -1,0 +1,41 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <h3 align="center">Lesson Plan - {{keterangan}}</h3>
+<p align="center">Klik Nomer untuk Edit/Hapus !</p>
+    <div class="row" align="center">
+        <form method="POST" action="{{action}}" >
+        <table>
+            <thead>
+                <th>No</th>
+                <th>Nomer</th>
+                <th>Kode</th>
+                <th>Butir Pelajaran</th>
+                <th>K. Konten</th>
+                <th>Problem Set</th>
+                <th>DP</th>
+            </thead>
+
+            <tbody>
+
+                {% for butir in butirs %}
+                    <tr>
+                        <td></td>
+                        <td>
+                           <input type="submit" value="{{butir.nomer}}" name="nomer">
+                        </td>
+                        <td>{{butir.kode}}</td>
+                        <td>{{butir.keterangan}}</td>
+                        <td>{{butir.kodekonten}}</td>
+                        <td>{{butir.proset}}</td>
+                        <td>{{butir.dp}}</td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+            <input type="hidden" name="kode" value="{{kode}}" />
+        <form>
+      </div>
+{% endblock %}

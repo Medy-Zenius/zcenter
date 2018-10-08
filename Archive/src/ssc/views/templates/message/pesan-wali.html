@@ -1,0 +1,48 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+        <br>
+        <h3 align="center">Pesan/tugas dari mentor pendampingmu</h3>
+        <p align="center">Silahkan balas pesan !</p>
+        <div class="row" align="center">
+            <form method="POST" action="{{action}}">
+              <div class="large-12 columns">
+              <div class="row">
+                   <div class="large-1 columns">
+                      <label for="right-label" class="right inline">Pesan</label>
+                   </div>
+                   <div class="large-10 columns">
+                       <input type="text" name="isi" />
+                    </div>
+                  <div class="large-1 columns">
+                      <input type="submit" value="SUBMIT" />
+                  </div>
+              </div>
+             </div>
+                <div><input type="hidden" name="idwali" value="{{idwali}}"></div>
+            </form>
+        </div>
+
+        <div class="row" align="center">
+        <table>
+            <thead>
+                <th>Dari</th>
+                <th>Tanggal</th>
+                <th>Pesan</th>
+            </thead>
+
+            <tbody>
+
+                    {% for pesan in pesans %}
+                        <tr>
+                            <td>{{pesan.status}}</td>
+                            <td>{{pesan.tanggal}}</td>
+                            <td>{{pesan.isi}}</td>
+                        </tr>
+                    {% endfor %}
+
+             </tbody>
+
+        </table>
+        </div>
+{% endblock %}

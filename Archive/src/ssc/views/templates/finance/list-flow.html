@@ -1,0 +1,32 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+        <br>
+        <h3 align="center">{{keterangan}}</h3>
+        <h3 align="center">Klik Nomer untuk Edit/Hapus ! </h3>
+        <div class="row" align="center">
+        <form method="POST" action="{{action}}">
+        <table>
+            <thead>
+                <th>Nomer</th>
+                <th>Keterangan</th>
+                <th>Jumlah</th>
+                <th>Tanggal Transaksi</th>
+                <th>ID</th>
+            </thead>
+
+            <tbody>
+                {% for datum in data %}
+                    <tr>
+                        <td><input type="submit" value="{{datum.nomer}}" name="nomer"></td>
+                        <td>{{datum.keterangan}}</td>
+                        <td>{{datum.jumlah}}</td>
+                        <td>{{datum.date}}</td>
+                        <td>{{datum.id}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form>
+        </div>
+{% endblock %}

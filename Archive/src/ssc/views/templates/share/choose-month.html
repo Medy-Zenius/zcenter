@@ -1,0 +1,35 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <div>
+        <form action="{{action}}" method="POST" >
+
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Bulan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <select name="kodebulan" tabindex="1">
+                            {% for bul in bulan %}
+                              <option value="{{bul.kode}}">{{bul.bulan}}</option>
+                            {% endfor%}
+                        </select>
+                    </div>
+               </div>
+          </div>
+
+          <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-10 columns">
+                         <input tabindex="8" type="submit"  value="SUBMIT" />
+                    </div>
+                </div>
+          <div>
+        </form>
+    </div>
+{% endblock %}

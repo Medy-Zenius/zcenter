@@ -1,0 +1,28 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+
+    <h3 align="center">Data Kelas</h3>
+    <div class="row" align="center">
+        <form action="/list-student" method="POST">
+        <table>
+            <thead>
+                <th>Kode</th>
+                <th>Level</th>
+                <th>Hari</th>
+                <th>Keterangan</th>
+            </thead>
+            <tbody>
+            {% for class in classes %}
+            <tr>
+                <td><input type="submit" value="{{class.kode}}" name="kode"></td>
+                <td>{{class.level}}</td>
+                <td>{{class.hari}}</td>
+                <td>{{class.keterangan}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </form>
+    </div>
+{% endblock %}

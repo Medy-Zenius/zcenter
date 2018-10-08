@@ -1,0 +1,67 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+
+    <div>
+        <p align="center">Lihat/Edit Pertemuan</p>
+
+        <form action="/update-pertemuan" method="POST">
+
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nomer</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  value="{{pert.kode}}" disabled>
+                    </div>
+                    <div class="large-8 columns" >
+                        <input type="hidden" value="{{pert.kode}}" name="kode">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tanggal</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"   value="{{pert.date}}"  name="tanggal">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tutor</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="tutor" value="{{pert.tutor}}">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kegiatan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="activities" value="{{pert.activities}}">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+              <div class="large-10 columns" align="center">
+                <input  type="submit" value="Update Pertemuan">
+              </div>
+            </div>
+        </form>
+        <form action="/delete-pertemuan" method="POST">
+            <input type="hidden" value="{{pert.kode}}" name="kode" />
+            <input type="submit" value="Delete Pertemuan !" />
+        </form>
+    </div>
+{% endblock %}

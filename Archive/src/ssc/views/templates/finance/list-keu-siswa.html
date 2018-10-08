@@ -1,0 +1,45 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+        <br>
+        <h3 align="center">Data Keuangan</h3>
+        <p align="center">Nomer Zenius {{notes}}</p>
+        {% for nam in nama %}
+            <p align="center">{{nam.name}}</p>
+        {% endfor %}
+        {% for tot in total %}
+            <p align="center">Biaya Total Rp. {{tot.fee}} ,-</p>
+        {% endfor %}
+        {% for jml in jumlah %}
+            <p align="center">Sudah Terbayar Rp. {{jml.sum}} ,-</p>
+        {% endfor %}
+
+        <div class="row" align="center">
+        <table>
+            <thead>
+                <th>NTrans</th>
+                <th>Cicilan ke</th>
+                <th>Sejumlah</th>
+                <th>Tanggal Transaksi</th>
+                <th>Penerima</th>
+            </thead>
+
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td>
+                            <form method="POST" action="keu-edit-trans" >
+                                <input type="submit" value="{{transaction.notrans}}" name="notrans">
+                            <form>
+                        </td>
+                        <td>{{transaction.cicilan}}</td>
+                        <td>Rp. {{transaction.biaya}} ,-</td>
+                        <td>{{transaction.dtrans}}</td>
+                        <td>{{transaction.id}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        </div>
+{% endblock %}

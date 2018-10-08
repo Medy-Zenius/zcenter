@@ -1,0 +1,60 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div>
+        <form action="/input-test" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kode</label>
+                    </div>
+                    {% for code in codes %}
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{code.kode}}" disabled >
+                        <input type="hidden" value="{{code.kode}}" name="code">
+                    </div>
+                    {% endfor %}
+                </div>
+             </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Mata Pelajaran</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{matpel}}" disabled >
+                        <input type="hidden" value="{{matpel}}" name="matpel">
+                    </div>
+                </div>
+             </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Waktu</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{date}}" disabled >
+                        <input type="hidden" value="{{date}}" name="date">
+                    </div>
+                </div>
+             </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">ZEN</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="" name="notes" tabindex="1" >
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="" name="score" tabindex="2" >
+                    </div>
+                    <div class="large-6 columns">
+                        <input type="submit" value="SUBMIT"  tabindex="3" >
+                    </div>
+                </div>
+             </div>
+        </form>
+    </div>
+
+{% endblock %}

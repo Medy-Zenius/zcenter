@@ -1,0 +1,51 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <div>
+        <h3 align="center">Klik Nomer = Hapus siswa dalam kelas !</h3>
+
+
+            <form method="POST" action="/hapus-siswa">
+                <div class="large-12 columns">
+                    <div class="row">
+                        <div class="large-5 columns">
+                            <label for="right-label" class="right inline">Kode Kelas</label>
+                        </div>
+                        <div class="large-2 columns">
+                            <input type="text"  name"kode" value="{{kode}}" disabled>
+                        </div>
+                        <div class="large-5 columns" style="visibility:hidden">
+                            <input type="text" value="{{kode}}" name="kode">
+                        </div>
+                    </div>
+                </div>
+                {% for class in classes %}
+                    <p align="center">Kelas : {{class.level}}</p>
+                    <p align="center">Waktu : {{class.hari}}</p>
+                    <p align="center">Keterangan : {{class.keterangan}}</p>
+                {% endfor %}
+                <div align="center">
+                    <table>
+                        <thead>
+                            <th>Kode</th>
+                            <th>Notes</th>
+                            <th>Nama</th>
+                        </thead>
+                        <tbody>
+                        {% for student in students %}
+                            <tr>
+                                <td>
+                                    <input type="submit" value="{{student.nomer}}" name="nomer">
+                                </td>
+                                <td>{{student.notes}}</td>
+                                <td>{{student.name}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+           </form>
+    </div>
+
+{% endblock %}
+

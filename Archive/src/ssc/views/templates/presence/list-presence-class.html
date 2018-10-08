@@ -1,0 +1,37 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+       <br>
+        <h3 align="center">Data Presensi Kelas</h3>
+        <p align="center">{{kelas.kode}} - {{kelas.hari}} - {{kelas.keterangan}}</p>
+        <form method="POST" action="/list-pre-class-student">
+        <div class="row" align="center">
+            <table>
+                <thead>
+                    <th>Kode</th>
+                    <th>Tanggal</th>
+                    <th>Tutor</th>
+                    <th>Aktifitas</th>
+                </thead>
+
+                <tbody>
+                   {% for datum in data %}
+                        <tr>
+
+                                <td>
+                                    <input type="submit" name="kodepertemuan" value="{{datum.kode}}" />
+                                </td>
+                                <td>{{datum.date}}</td>
+                                <td>{{datum.tutor}}</td>
+                                <td>{{datum.activities}}</td>
+
+                        </tr>
+                   {% endfor %}
+                </tbody>
+            </table>
+        </div>
+          <input type="hidden" name="kelas" value="{{kelas.kode}} - {{kelas.hari}} - {{kelas.keterangan}}" />
+        </form>
+{% endblock %}
+
+

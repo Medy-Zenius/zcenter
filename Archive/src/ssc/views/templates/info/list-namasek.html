@@ -1,0 +1,25 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <script>var vno=1;</script>
+    <br>
+    <h3 align="center">Nama Sekolah</h3>
+    <div class="container">
+        <table align="center">
+            <thead>
+                <th>No</th>
+                <th>Nama</th>
+            </thead>
+
+            <tbody>
+                {% for datum in data %}
+                    <tr>
+                        <td><script>document.write(vno);</script></td>
+                        <td>{{datum.nama}}</td>
+                    </tr>
+                    <script>vno+=1;</script>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div class="container">
+        <h3 align="center">Input kode Cabang</h3>
+        <form method="POST" action="{{action}}">
+            <div class="row">
+                <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kode Cabang</label>
+                </div>
+                <div class="large-2 columns">
+                    <input type="text" name="kocab" placeholder="Kode Cabang" />
+                </div>
+                <div class="large-3 columns">
+                    <input type="submit"  value="SUBMIT" />
+                </div>
+                  <div class="large-5 columns"></div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

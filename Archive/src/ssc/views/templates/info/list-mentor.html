@@ -1,0 +1,29 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <h3 align="center">List Mentor</h3>
+    <div class="container">
+        <form method="POST" action="/list-siswa-mentor">
+        <table align="center">
+            <thead>
+                <th>Nomer</th>
+                <th>ID</th>
+                <th>Nama</th>
+            </thead>
+
+            <tbody>
+                {% for datum in data %}
+                    <tr>
+                        <td>
+                            <input type="submit" name="nomer" value="{{datum.nomer}}" />
+                        </td>
+                        <td>{{datum.id}}</td>
+                        <td>{{datum.name}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </form>
+    </div>
+{% endblock %}

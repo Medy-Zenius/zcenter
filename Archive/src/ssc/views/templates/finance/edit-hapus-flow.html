@@ -1,0 +1,85 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+    <p align="center">{{keterangan}}</p>
+    <div>
+        <form action="{{action1}}" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">NOMER</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  value="{{data.nomer}}" disabled>
+                        <input type="hidden" value="{{data.nomer}}" name="nomer">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Keterangan</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="keterangan" value="{{data.keterangan}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Jumlah</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="jumlah" value="{{data.jumlah}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">Tanggal</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="tanggal" value="{{data.date}}">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline">ID</label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="text"  name="id" value="{{data.id}}" disabled >
+                    </div>
+                </div>
+            </div>
+
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input  type="submit" value="Update Data" tabindex="5">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form method="POST" action="{{action2}}" >
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-3 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-9 columns">
+                        <input type="submit" value="DELETE DATA !!!" />
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="nomer" value="{{data.nomer}}" />
+        </form>
+    </div>
+{% endblock %}

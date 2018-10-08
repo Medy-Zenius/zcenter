@@ -1,0 +1,28 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <script>var vno=1;</script>
+    <br>
+    <h3 align="center">{{keterangan}}</h3>
+    <h3 align="center">Total = Rp. {{total}} ,-</h3>
+    <div class="container">
+        <table align="center">
+            <thead>
+                <th>No</th>
+                <th>Deskripsi</th>
+                <th>Jumlah</th>
+            </thead>
+
+            <tbody>
+                {% for datum in data %}
+                    <tr>
+                        <td><script>document.write(vno);</script></td>
+                        <td>{{datum.name}}</td>
+                        <td>{{datum.sjumlah}}</td>
+                    </tr>
+                    <script>vno+=1;</script>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

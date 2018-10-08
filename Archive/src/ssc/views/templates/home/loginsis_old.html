@@ -1,0 +1,30 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+<br>
+<form method="POST" action="/login-siswa">
+
+  <div class="row">
+    <div class="large-2 columns">
+      <label>Zenius Number
+        <input type="text" name="zen" placeholder="ZEN" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 columns">
+      <label>Password
+        <input type="password" name="pw" placeholder="Password" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 columns">
+      <label>
+        <input type="submit"  value="SUBMIT" />
+      </label>
+    </div>
+  </div>
+</form>
+
+
+{% endblock %}

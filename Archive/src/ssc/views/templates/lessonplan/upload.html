@@ -1,0 +1,27 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+       <br>
+       <div>
+       <h3>Upload Problem Set</h3>
+
+       <FORM NAME="testform" method="POST" action="/upload-proset" enctype="multipart/form-data" target="_blank">
+           <div class="large-12 columns">
+               <div class="row">
+                  <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Pilih File</label>
+                   </div>
+                   <div class="large-4 columns">
+                      <input id="file" name="file" type="file" />
+                   </div>
+                   <div class="large-2 columns">
+                      <input type="submit" value="UPLOAD" />
+                   </div>
+                   <div class="large-4 columns">
+                       <input type="hidden" name="kode" value="{{kode}}" />
+                   </div>
+               </div>
+           </div>
+        </FORM>
+        </div>
+{% endblock %}

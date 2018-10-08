@@ -1,0 +1,79 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+
+    <div>
+        <p align="center">Lihat/Edit Test</p>
+        {% for tst in test %}
+        <form action="/update-test-master" method="POST">
+
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nomer</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  value="{{tst.kode}}" disabled>
+                    </div>
+                    <div class="large-8 columns" >
+                        <input type="hidden" value="{{tst.kode}}" name="kode">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tanggal</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"   value="{{tst.date}}"  name="tanggal" tabindex="1">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">MatPel</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="matpel" value="{{tst.matpel}}"  tabindex="2">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Keterangan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="description" value="{{tst.description}}"  tabindex="3">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Dokumen</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="dokumen" value="{{tst.dokumen}}"  tabindex="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="large-10 columns" align="center">
+                <input  type="submit" value="Update Test" tabindex="5">
+              </div>
+            </div>
+        </form>
+        <div class="row">
+        <form method="POST" action="/hapus-kdtest">
+            <input type="submit" value="HAPUS DATA TEST INI!">
+            <input type="hidden" name="kode" value="{{tst.kode}}" />
+        </form>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

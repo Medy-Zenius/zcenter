@@ -1,0 +1,79 @@
+{% extends "ssc/views/templates/base1.html" %}
+{% block content %}
+
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+
+    <main>
+
+        <!-- Contact us -->
+        <section class="skew skew__deg-2 skew__deg-2-m-8 skew__deg-3_before-inset">
+            <div class="skew_sub-1 skew_sub-1-m-8">
+                <div class="skew_sub-2">
+                    <div class="skew_bg bg-white"></div>
+                </div>
+            </div>
+            <div class="skew_cnt container contain-wrap well-4 well-4--inset-2">
+                <br>
+                <h2>LOKASI CINERE DEPOK</h2>
+                <div class="row">
+                      <style>
+                            #map {
+                              height: 400px;
+                              width: 100%;
+                             }
+                      </style>
+                      <div class="col-lg-6 col-xs-12">
+                          <h5>PETA</h5>
+                          <div id="map"></div>
+                          <script>
+                            function initMap() {
+                              var uluru = {lat: -6.336329, lng: 106.781770};
+                              //Fatmawati lat: -6.289283, lng: 106.795257
+                              //Cijantung lat: -6.322079, lng: 106.848264
+                              //Cinere lat: -6.336329, lng: 106.781770
+                              //Depok lat: -6.386658, lng: 106.827131
+                              //Dukuh Zamrud lat: -6.314216, lng: 107.021540
+                              var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 15,
+                                center: uluru
+                              });
+                              var marker = new google.maps.Marker({
+                                position: uluru,
+                                map: map
+                              });
+                            }
+                          </script>
+                          <script async defer
+                          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb2WhDkyH1-oPhJNimKVsaZVZHKSRYVuI&callback=initMap">
+                          </script>
+                      </div>
+
+                      <div class="col-lg-6 col-xs-12">
+                           <h5>Alamat</h5>
+                           <p>
+                             Ruko Blok M No. 20<br>
+                             Jl. Cinere Raya, Depok<br>
+                             Jawa Barat
+                           </p>
+                           <h5>Telepon</h5>
+                           <p>
+                              +62 21 7541816
+                           </p>
+
+                           <h5>Contact Person</h5>
+                             <p>
+
+                             </p>
+                           </ol>
+                      </div>
+                  </div>
+              </div>
+        </section>
+        <!-- END Contact us -->
+
+
+
+    </main>
+{% endblock %}

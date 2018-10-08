@@ -1,0 +1,26 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+
+    <div class="row">
+        <h3 align="center">Komposisi Siwa</h3>
+    </div>
+
+    <div class="row">
+        <table align="center">
+            <thead>
+                <th>Kelas</th>
+                <th>Jumlah</th>
+            </thead>
+            <tbody>
+            {% for datum in data %}
+            <tr>
+                <td>{{datum.level}}</td>
+                <td>{{datum.clevel}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

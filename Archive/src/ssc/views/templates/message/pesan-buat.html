@@ -1,0 +1,42 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+  <br>
+   <h3>Buat Pesan Baru</h3>
+    <form method="POST" action="/wali-kirim-pesan">
+        <div class="large-12 columns">
+              <div class="row">
+                   <div class="large-2 columns">
+                      <label for="right-label" class="right inline">ZEN</label>
+                   </div>
+                   <div class="large-4 columns">
+                       <input type="text" value="{{notes}}" disabled />
+                    </div>
+                  <div class="large-6 columns" style="visibility:hidden">
+                      <input type=""text" value="{{notes}}" name="notes" />
+                  </div>
+              </div>
+        </div>
+        <div class="large-12 columns">
+              <div class="row">
+                   <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Pesan</label>
+                   </div>
+                   <div class="large-10 columns">
+                       <input type="text" placeholder="Tulis pesan disini" name="isi" />
+                    </div>
+              </div>
+        </div>
+
+        <div class="large-12 columns">
+              <div class="row">
+                   <div class="large-2 columns"></div>
+                   <div class="large-10 columns">
+                       <input type="submit"  value="SUBMIT"/>
+                    </div>
+               </div>
+        </div>
+  </form>
+
+{% endblock %}
+

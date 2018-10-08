@@ -1,0 +1,448 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenius Center | Welcome</title>
+    <link rel="stylesheet" href="css/foundation/normalize.css" />
+    <link rel="stylesheet" href="css/foundation/foundation.css" />
+    <script src="js/foundation/vendor/modernizr.js"></script>
+    <script src="js/foundation/valToDesc.js" type="text/javascript"></script>
+</head>
+<body>
+{% block header %}
+    <div><img src="/images/logo.png" height="50" width="125"></div>
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="active"> <h3><a href="/">Home</a></h3> </li>
+            <li class="toggle-topbar menu-icon"><a href="/">Menu</a></li>
+        </ul>
+        <section class="top-bar-section">
+
+        {% if user %}
+          {% if status = 1 %}
+            <ul class="right">
+               <li><a href="/student-lp">Lesson Plan</a></li>
+               <li><a href="/student-message">Pesan/Tugas</a></li>
+               <li class="has-dropdown"><a href="">Info Kamu</a>
+                  <ul class="dropdown">
+                    <li><a href="/student-presence">Presensi Total</a></li>
+                    <li><a href="/student-presence-class">Presensi Kelas</a></li>
+                    <li><a href="/student-finance">Keuangan</a></li>
+                    <li><a href="/student-test">Hasil Test</a></li>
+                    <li><a href="/ganti-pw-std">Ganti Password</a></li>
+                  </ul>
+               </li>
+              <!--
+               <li>
+                   <form method="POST" action="http://localhost:5002/" target="_blank">
+                       <input type="submit" value="progen">
+                       <input type="hidden" name="id" value="{{user}}" />
+                       <input type="hidden" name="pass" value="{{pass}}" />
+                       <input type="hidden" name="scode" value="{{scode}}" />
+                   </form>
+               </li>
+               -->
+               <li><a href="/logout">Logout {{user}}</a></li>
+            </ul>
+            <!--
+            <ul class="left">
+                  <li class="has-dropdown"><a href="/zeniusmax">Zenius MAX</a>
+                    <ul class="dropdown">
+                        <li><a href="/filosofi">Filosofi</a></li>
+                        <li><a href="/tujuan">Tujuan</a></li>
+                        <li><a href="/tutor">Tutor</a></li>
+                        <li><a href="/fasilitas">Fasilitas</a></li>
+                    </ul>
+                  </li>
+                  <li class="has-dropdown"><a href="/program">Program Belajar</a>
+                    <ul class="dropdown">
+                        <li><a href="/sd">Kelas 1-5 SD</a></li>
+                        <li><a href="/sd6">Kelas 6 SD</a></li>
+                        <li><a href="/smp7">Kelas 7 SMP</a></li>
+                        <li><a href="/smp8">Kelas 8 SMP</a></li>
+                        <li><a href="/smp9">Kelas 9 SMP</a></li>
+                        <li><a href="/sma10">Kelas 10 SMA</a></li>
+                        <li><a href="/sma11">Kelas 11 SMA</a></li>
+                        <li><a href="/sma12">Kelas 12 SMA</a></li>
+                        <li><a href="/sma13">Kelas Alumni SMA</a></li>
+                        <li><a href="/intsma">Kelas Super Intensif SBMPTN</a></li>
+                    </ul>
+                </li>
+                <li><a href="/kontak">Kontak</a></li>
+              </ul>
+             -->
+          {% endif %}
+
+          {% if status = 2 %}
+              <ul class="right">
+                 <li><a href="/logout">Logout {{user}}</a></li>
+
+                        <!-- <li><a href="/ganti-pw-fo">Ganti Password</a></li> -->
+               </ul>
+            <!-- Left Nav Section -->
+               <ul class="left">
+
+                 <li><a href="/daftar">Pendaftaran</a></li>
+
+                 <li class="has-dropdown"><a href="">Pembayaran</a>
+                    <ul class="dropdown">
+                        <li><a href="/current-date">Hari Ini</a></li>
+                        <li><a href="/prev-date">Hari Sebelumnya</a></li>
+                    </ul>
+                 </li>
+                 <li><a href="/laporan">Laporan</a></li>
+                 <li class="has-dropdown"><a href="">Presensi</a>
+                    <ul class="dropdown">
+                        <li><a href="/create-class">Data Pertemuan</a></li>
+                        <li><a href="/input-presence">Input Presensi</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Test</a>
+                    <ul class="dropdown">
+                        <li><a href="/create-test">Data Test</a></li>
+                        <li><a href="/input-test">Input Nilai</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Informasi</a>
+                    <ul class="dropdown">
+                        <li><a href="/student-info">Data Siswa</a></li>
+                        <li><a href="/list-class">Kelas</a></li>
+                        <li><a href="/class-info">Pertemuan</a></li>
+                        <li><a href="/student-presence-info">Presensi Siswa</a></li>
+                        <li><a href="/class-presence-info">Presensi Kelas</a></li>
+                        <li><a href="/student-class-presence-info">Presensi Siswa-Kelas</a></li>
+                        <li><a href="/student-test-info">Hasil Test</a></li>
+                        <li><a href="/payment-info">Pembayaran</a></li>
+                        <li><a href="/transactions-info">Transaksi Siswas</a></li>
+                        <li><a href="/mini-transactions-info">Transaksi Mini</a></li>
+                        <li class="has-dropdown"><a href="">Nama Sekolah</a>
+                            <ul class="dropdown">
+                                <li><a href="/list-namasek">List</a></li>
+                                <li><a href="/add-namasek">Add</a></li>
+                            </ul>
+                         </li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">My Profile</a>
+                    <ul class="dropdown">
+                        <li><a href="/user-profile">My Data</a></li>
+                        <li><a href="/user-change-password">Change Password</a></li>
+                    </ul>
+                 </li>
+              </ul>
+          {% endif %}
+
+          {% if status = 3 %}
+              <ul class="right">
+                  <li><a href="/logout">Logout {{user}}</a></li>
+              </ul>
+              <ul class="left">
+                 <li class="has-dropdown"><a href="">Data Siswa</a>
+                    <ul class="dropdown">
+                        <li><a href="/keu-biaya-siswa">Edit Keu Siswa</a></li>
+                        <li><a href="/keu-transaksi-siswa">Transaksi</a></li>
+                        <li><a href="/keu-delete-transaksi-siswa">Delete Transaksi</a></li>
+                        <li><a href="/keu-total-transaksi">Total Transaksi</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Cetak</a>
+                    <ul class="dropdown">
+                        <li><a href="/keu-cetak-kuitansi">Cetak Kuitansi</a></li>
+                        <!-- <li><a href="">Sub - 2</a></li> -->
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Pengeluaran</a>
+                    <ul class="dropdown">
+                        <li><a href="/outflow-cdate">Hari Ini</a></li>
+                        <li><a href="/outflow-pdate">Hari Sebelumnya</a></li>
+                        <li><a href="/keu-edit-outflow">Edit Pengeluaran</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Pendapatan</a>
+                    <ul class="dropdown">
+                        <li><a href="/inflow-cdate">Hari Ini</a></li>
+                        <li><a href="/inflow-pdate">Hari Sebelumnya</a></li>
+                        <li><a href="/keu-edit-inflow">Edit Pendapatan</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Laporan</a>
+                    <ul class="dropdown">
+                        <li><a href="/trans-per-day">Transaksi harian</a></li>
+                        <li><a href="/trans-per-month">Transaksi Bulanan</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">My Profile</a>
+                    <ul class="dropdown">
+                        <li><a href="/user-profile">My Data</a></li>
+                        <li><a href="/user-change-password">Change Password</a></li>
+                    </ul>
+                 </li>
+            </ul>
+          {% endif %}
+
+          {% if status = 4 %}
+              <ul class="right">
+                  <li><a href="/logout">Logout {{user}}</a></li>
+              </ul>
+              <ul class="left">
+                 <li class="has-dropdown"><a href="">Edit Siswa</a>
+                    <ul class="dropdown">
+                        <li><a href="/edit-data-pribadi">Data Pribadi</a></li>
+                        <li><a href="/edit-test-siswa">Test</a></li>
+                        <li><a href="/edit-presensi-siswa">Kehadiran</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Data Kelas</a>
+                    <ul class="dropdown">
+                        <li><a href="/new-group">Baru</a></li>
+                        <li><a href="/list-group">Tersedia</a></li>
+                        <li><a href="/edit-group">Edit Kelas</a></li>
+                        <li><a href="/hapus-siswa">Hapus Siswa dalam Kelas</a></li>
+                        <li><a href="/hapus-group">Hapus Kelas</a></li>
+                        <li><a href="/input-group">Input Siswa</a></li>
+                        <li><a href="/find-student-group">Cari Kelas Siswa</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Presensi</a>
+                    <ul class="dropdown">
+                        <li><a href="/create-class">Data Pertemuan</a></li>
+                        <li><a href="/input-presence">Input Presensi</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Test</a>
+                    <ul class="dropdown">
+                        <li><a href="/create-test">Data Test</a></li>
+                        <li><a href="/input-test">Input Nilai</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Mentor</a>
+                     <ul class="dropdown">
+                        <li><a href="/list-wali">Daftar Mentor</a></li>
+                        <li><a href="/new-wali">Mentor Baru</a></li>
+                        <li><a href="/view-edit-wali">Lihat-Edit Mentor</a></li>
+                        <li><a href="/delete-wali">Hapus Mentor</a></li>
+                        <li><a href="/siswa-wali">Input Zenian</a></li>
+                        <li><a href="/hapus-siswa-wali">Hapus Zenian</a></li>
+                        <li><a href="/cari-siswa-wali">Cari Mentor Zenian</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Edit</a>
+                     <ul class="dropdown">
+                        <li><a href="/edit-pertemuan">Pertemuan</a></li>
+                        <li><a href="/edit-test">Test</a></li>
+                        <li><a href="/upload-dokumen">Upload Dokumen</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Informasi</a>
+                    <ul class="dropdown">
+                        <li><a href="/student-info">Data Siswa</a></li>
+                        <li><a href="/list-class">Kelas</a></li>
+                        <li><a href="/class-info">Pertemuan</a></li>
+                        <li><a href="/student-presence-info">Presensi Siswa</a></li>
+                        <li><a href="/class-presence-info">Presensi Kelas</a></li>
+                        <li><a href="/student-class-presence-info">Presensi Siswa-Kelas</a></li>
+                        <li><a href="/student-test-info">Hasil Test</a></li>
+                        <li><a href="/payment-info">Pembayaran</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">My Profile</a>
+                    <ul class="dropdown">
+                        <li><a href="/user-profile">My Data</a></li>
+                        <li><a href="/user-change-password">Change Password</a></li>
+                    </ul>
+                 </li>
+            </ul>
+          {% endif %}
+
+          {% if status = 5 %}
+              <ul class="right">
+                  <li><a href="/logout">Logout {{user}}</a></li>
+              </ul>
+              <ul class="left">
+                 <li class="has-dropdown"><a href="">Siswa</a>
+                    <ul class="dropdown">
+                        <li><a href="/wali-daftar-siswa">My Zenian List</a></li>
+                        <li><a href="/wali-test">Test</a></li>
+                        <li><a href="/wali-presensi">Kehadiran</a></li>
+                    </ul>
+                 </li>
+                 <li><a href="/student-lp">Lesson Plan</a></li>
+                  <li class="has-dropdown"><a href="">Pesan/Tugas</a>
+                     <ul class="dropdown">
+                        <li><a href="/wali-pesan-buat">Buat Pesan</a></li>
+                        <li><a href="/wali-pesan-lihat">Lihat Pesan</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">My Profile</a>
+                     <ul class="dropdown">
+                        <li><a href="/user-profile">My Data</a></li>
+                        <li><a href="/user-change-password">Change Password</a></li>
+                     </ul>
+                 </li>
+               </ul>
+          {% endif %}
+
+          {% if status = 6 %}
+              <ul class="right">
+                  <li><a href="/logout">Logout {{user}}</a></li>
+              </ul>
+              <ul class="left">
+                 <li class="has-dropdown"><a href="">Lesson Plan</a>
+                     <ul class="dropdown">
+                        <li><a href="/new-lp">Baru</a></li>
+                         <li><a href="/view-edit-lp">Lihat-Edit</a></li>
+                        <li><a href="/delete-lp">Hapus</a></li>
+                        <li><a href="/upload-proset">Upload Problem Set</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">My Profile</a>
+                     <ul class="dropdown">
+                        <li><a href="/user-profile">My Data</a></li>
+                        <li><a href="/user-change-password">Change Password</a></li>
+                     </ul>
+                 </li>
+               </ul>
+          {% endif %}
+
+          {% if status = 7 %}
+              <ul class="right">
+                  <li><a href="/logout">Logout {{user}}</a></li>
+              </ul>
+              <ul class="left">
+                 <li class="has-dropdown"><a href="">Siswa</a>
+                     <ul class="dropdown">
+                        <li><a href="/info-jumlah-siswa">Jumlah Siswa</a></li>
+                         <li><a href="/info-komposisi-siswa">Komposisi Siswa</a></li>
+                        <li><a href="/info-asal-sekolah">Asal Sekolah</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Keuangan Siswa</a>
+                     <ul class="dropdown">
+                        <li><a href="/info-biaya-total-siswa">Biaya Total Siswa</a></li>
+                        <li><a href="/info-angsuran-siswa">Angsuran Siswa</a></li>
+                        <li><a href="/info-piutang-siswa">Piutang</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Cash Flow</a>
+                     <ul class="dropdown">
+                        <li><a href="/info-inflow">Inflow</a></li>
+                        <li><a href="/info-outflow">Outflow</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">My Profile</a>
+                     <ul class="dropdown">
+                        <li><a href="/user-profile">My Data</a></li>
+                        <li><a href="/user-change-password">Change Password</a></li>
+                     </ul>
+                 </li>
+              </ul>
+          {% endif %}
+
+          {% if status = 9 %}
+            <ul class="right">
+                  <li><a href="/logout">Logout {{user}}</a></li>
+              </ul>
+              <ul class="left">
+                 <li class="has-dropdown"><a href="">Student</a>
+                    <ul class="dropdown">
+                        <li><a href="/admin-student-info">Info</a></li>
+                        <li><a href="/admin-student-edit">Edit</a></li>
+                        <li><a href="/admin-student-delete">Delete</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Users</a>
+                    <ul class="dropdown">
+                        <li><a href="/users-list">List</a></li>
+                        <li><a href="/user-edit">Edit</a></li>
+                        <li><a href="/user-add">Add</a></li>
+                        <li><a href="/user-delete">Delete</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Rekap</a>
+                    <ul class="dropdown">
+                        <li><a href="/rekap-biaya-bimbel">Biaya Bimbel</a></li>
+                        <li><a href="/rekap-pembayaran">Pembayaran</a></li>
+                        <li><a href="/rekap-piutang">Piutang</a></li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">Preference</a>
+                    <ul class="dropdown">
+                        <li class="has-dropdown"><a href="">Cabang</a>
+                           <ul class="dropdown">
+                              <li><a href="/list-kodecabang">List Cabang</a></li>
+                              <li><a href="/add-cabang">Add Cabang</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="/list-kodestatus">List Kode Status</a></li>
+                        <li class="has-dropdown"><a href="">Outflow</a>
+                           <ul class="dropdown">
+                              <li><a href="/list-acc-outflow">List Account</a></li>
+                              <li><a href="/add-acc-outflow">Add Account</a></li>
+                           </ul>
+                        </li>
+                        <li class="has-dropdown"><a href="">Inflow</a>
+                           <ul class="dropdown">
+                              <li><a href="/list-acc-inflow">List Account</a></li>
+                              <li><a href="/add-acc-inflow">Add Account</a></li>
+                           </ul>
+                        </li>
+                    </ul>
+                 </li>
+                 <li class="has-dropdown"><a href="">My Profile</a>
+                    <ul class="dropdown">
+                        <li><a href="/user-profile">My Data</a></li>
+                        <li><a href="/user-change-password">Change Password</a></li>
+                    </ul>
+                 </li>
+            </ul>
+          {% endif %}
+
+        {% else %}
+           <ul class="right">
+                <li class="has-dropdown"><a href="">Login</a>
+                  <ul class="dropdown">
+                    <li><a href="/login-siswa">Siswa</a></li>
+                    <li><a href="/login-nonsiswa">Non Siswa</a></li>
+                  </ul>
+                </li>
+           </ul>
+           <ul class="left">
+                  <li class="has-dropdown"><a href="/zeniusmax">Zenius MAX</a>
+                    <ul class="dropdown">
+                        <li><a href="/filosofi">Filosofi</a></li>
+                        <li><a href="/tujuan">Tujuan</a></li>
+                        <li><a href="/tutor">Tutor</a></li>
+                        <li><a href="/fasilitas">Fasilitas</a></li>
+                    </ul>
+                  </li>
+                  <li class="has-dropdown"><a href="/program">Program Belajar</a>
+                    <ul class="dropdown">
+                        <li><a href="/sd">Kelas 1-5 SD</a></li>
+                        <li><a href="/sd6">Kelas 6 SD</a></li>
+                        <li><a href="/smp7">Kelas 7 SMP</a></li>
+                        <li><a href="/smp8">Kelas 8 SMP</a></li>
+                        <li><a href="/smp9">Kelas 9 SMP</a></li>
+                        <li><a href="/sma10">Kelas 10 SMA</a></li>
+                        <li><a href="/sma11">Kelas 11 SMA</a></li>
+                        <li><a href="/sma12">Kelas 12 SMA</a></li>
+                        <li><a href="/sma13">Kelas Alumni SMA</a></li>
+                        <li><a href="/intsma">Kelas Super Intensif SBMPTN</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="/kontak">Kontak</a></li>
+              </ul>
+        {% endif %}
+
+    </section>
+    </nav>
+ {% endblock %}
+ {% block content %}
+ {% endblock %}
+    <script src="js/foundation/vendor/jquery.js"></script>
+    <script src="js/foundation/foundation.min.js"></script>
+    <script src="js/foundation/vendor/foundation.orbit.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>

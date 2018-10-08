@@ -1,0 +1,30 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+
+    <div class="row">
+        <h3 align="center">Data Siswa</h3>
+        <p align="center">Kode Kelas : {{kode}}</p>
+        <p align="center">Kelas : {{level}}</p>
+        <p align="center">Waktu : {{hari}}</p>
+        <p align="center">Keterangan : {{keterangan}}</p>
+    </div>
+
+    <div class="row">
+        <table align="center">
+            <thead>
+                <th>Notes</th>
+                <th>Nama</th>
+            </thead>
+            <tbody>
+            {% for student in students %}
+            <tr>
+                <td align="center">{{student.notes}}</td>
+                <td>{{student.name}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

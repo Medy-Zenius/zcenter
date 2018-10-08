@@ -1,0 +1,19 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+        <br>
+        <h3 align="center">My Profile</h3>
+
+
+        <div class="row" align="center">
+        <table>
+
+            <tbody>
+                <tr><td>ID</td><td>{{data.id}}</td></tr>
+                <tr><td>Nama</td><td>{{data.nama}}</td></tr>
+                <tr><td>Cabang</td><td>{{data.nacab}}</td></tr>
+                <tr><td>Email</td><td>{{data.email}}</td></tr>
+            </tbody>
+
+        </table>
+        </div>
+{% endblock %}

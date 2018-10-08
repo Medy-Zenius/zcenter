@@ -1,0 +1,157 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+  <SCRIPT LANGUAGE="JavaScript">
+       function kirim(){
+          var t=document.df.dbirth.value;var b=document.df.mbirth.value; var h=document.df.ybirth.value;
+
+          document.df.birth.value = h + "-" + twochar(b) + "-" + twochar(t);
+
+        document.df.submit();
+
+       }
+    </SCRIPT>
+  <br>
+   <p align="center">Input Data Wali Baru</p>
+  <div>
+      <form method="POST" action="/new-wali" id="df" name="df">
+         <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">Nama</label>
+                </div>
+                <div class="large-10 columns">
+                    <input type="text"  name="nama" placeholder="Nama" tabindex="1">
+                </div>
+            </div>
+          </div>
+          <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">Alamat</label>
+                </div>
+                <div class="large-10 columns">
+                    <input type="text"  name="alamat" placeholder="Alamat" tabindex="2">
+                </div>
+            </div>
+          </div>
+          <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">Tempat Lahir</label>
+                </div>
+                <div class="large-10 columns">
+                    <input type="text"  name="tempatlahir" placeholder="Tempat Lahir" tabindex="3">
+                </div>
+            </div>
+          </div>
+          <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">Tanggal Lahir</label>
+                </div>
+                <div class="large-3 columns">
+                    <select  name="dbirth" tabindex="4">
+                        <option value="0">Tanggal</option>
+                      <script>
+                          for (i=1; i<=31; i++)
+                              {
+                                   document.write("<option value=" + i + ">" + i + "</option>");
+                              }
+                      </script>
+                    </select>
+                </div>
+                <div class="large-3 columns">
+                    <select  name="mbirth" tabindex="5">
+                      <option value="0">Bulan</option>
+                      <script>
+                          for (i=1; i<=12; i++)
+                              {
+                                  document.write("<option value=" + i + ">" + i + "</option>");
+                              }
+                      </script>
+                    </select>
+                </div>
+                <div class="large-3 columns">
+                    <select name="ybirth" tabindex="6">
+                      <option value="0">Tahun</option>
+                      <script>
+                          for (i=1945; i<=2000; i++)
+                              {
+                                  document.write("<option value=" + i + ">" + i + "</option>");
+                              }
+                      </script>
+                    </select>
+                </div>
+                <div class="large-1"></div>
+            </div>
+         </div>
+         <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">Telpon</label>
+                </div>
+                <div class="large-10 columns">
+                    <input type="text"  name="telpon" placeholder="Telpon" tabindex="7">
+                </div>
+            </div>
+         </div>
+         <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">Email</label>
+                </div>
+                <div class="large-10 columns">
+                    <input type="text"  name="email" placeholder="Email" tabindex="8">
+                </div>
+            </div>
+         </div>
+         <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">Pendidikan</label>
+                </div>
+                <div class="large-10 columns">
+                    <input type="text"  name="pendidikan" placeholder="Pendidikan" tabindex="9">
+                </div>
+            </div>
+         </div>
+         <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">Cabang</label>
+                </div>
+                <div class="large-3 columns">
+                    <input type="text"  value="{{kodecabang}}" disabled>
+                </div>
+                <div class="large-7 columns"></div>
+            </div>
+         </div>
+         <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+                  <label for="right-label" class="right inline">ID</label>
+                </div>
+                <div class="large-3 columns">
+                    <input type="text"  name="id" placeholder="ID" tabindex="10">
+                </div>
+                <div class="large-7"></div>
+            </div>
+         </div>
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="large-2 columns">
+
+                </div>
+                <div class="large-6 columns">
+                    <input type="button"  value="Daftarkan !" tabindex="11" onClick="kirim()"/>
+                </div>
+            </div>
+        </div>
+        <div>
+            <input  type="hidden" name="birth" />
+        </div>
+      </form>
+  </div>
+{% endblock %}
+

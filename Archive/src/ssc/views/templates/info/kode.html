@@ -1,0 +1,23 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <h3 align="center">{{keterangan}}</h3>
+    <div class="container">
+        <table align="center">
+            <thead>
+                <th>KODE</th>
+                <th>NAMA</th>
+            </thead>
+
+            <tbody>
+                {% for datum in data %}
+                    <tr>
+                        <td>{{datum.code}}</td>
+                        <td>{{datum.name}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

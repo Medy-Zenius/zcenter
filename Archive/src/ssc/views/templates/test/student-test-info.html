@@ -1,0 +1,65 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+       <SCRIPT LANGUAGE="JavaScript">
+            function kirim(mp){
+                document.pageform.hal.value = mp;
+                //document.pageform.submit();
+                document.getElementById('pageform').submit();
+            }
+        </SCRIPT>
+       <br>
+        <h3 align="center">Data Test</h3>
+        <p align="center">ZEN  {{notes}} - {{name}}</p>
+
+        <div class="row" align="center">
+        <form method="POST" action="/view-document" target="_blank">
+        <table>
+            <thead>
+                <th>Tanggal</th>
+                <th>MatPel</th>
+                <th>Deskripsi</th>
+                <th>Nilai</th>
+                <th>Dokumen</th>
+            </thead>
+
+            <tbody>
+                {% for test in tests %}
+                    <tr>
+                        <td>{{test.date}}</td>
+                        <td>{{test.matpel}}</td>
+                        <td>{{test.description}}</td>
+                        <td>{{test.score}}</td>
+                        <td>
+                            {% if test.dokumen %}
+                                <input type="submit" name="file" value="{{test.dokumen}}" />
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        </form>
+        </div>
+        <div class="row" align="center">
+        <form action="{{action}}" method="POST" name="pageform" id="pageform">
+            <script>
+                var last=Math.ceil({{rows}}/10);
+                var halaman={{page}}+1;
+                //document.write({{rows}});
+                if ({{page}} > 0) {
+                  document.write("<input type='submit' value='PREV' onClick='kirim({{page}}-1)'>");
+                }
+                document.write("   halaman " + halaman + " dari " + last + "   ");
+                if ({{page}} < last-1) {
+                  document.write("<input type='submit' value='NEXT' onClick='kirim({{page}}+1)'>");
+                }
+            </script>
+            <input type="hidden"  name="hal">
+            <input type="hidden" name="nama" value="{{name}}" />
+            <input type="hidden" name="notes" value="{{notes}}" />
+        </form>
+        </div>
+
+{% endblock %}

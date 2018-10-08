@@ -1,0 +1,98 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+  <br>
+  <form action="/user-update-data" method="POST">
+    <div class="row">
+       <div class="small-4">
+          <div class="row">
+            <div class="small-6 columns">
+              <label for="right-label" class="right inline">ID</label>
+            </div>
+            <div class="small-6 columns">
+              <input type="text"  value="{{data.id}}" disabled>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline">Nama</label>
+            </div>
+            <div class="small-9 columns">
+              <input type="text" name="nama" value="{{data.name}}" placehorder="Nama">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline">Status</label>
+            </div>
+            <div class="small-9 columns">
+              <input type="text" name="status" value="{{data.status}}" placehorder="Password Baru">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline">Email</label>
+            </div>
+            <div class="small-9 columns">
+              <input type="text" name="email" value="{{data.email}}" placehorder="Password Baru">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline">Kode Cabang</label>
+            </div>
+            <div class="small-9 columns">
+              <input type="text" name="kocab" value="{{data.scode}}" placehorder="Password Baru">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right"></label>
+            </div>
+            <div class="small-9 columns">
+              <input type="submit"  value="Update Data" >
+            </div>
+          </div>
+        </div>
+    </div>
+      <input type="hidden" name="id" value="{{data.id}}" />
+   </form>
+
+   <form action="/user-resetpw" method="POST">
+    <div class="row">
+       <div class="small-8">
+          <div class="row">
+            <div class="small-3 columns">
+              <label for="right-label" class="right inline"></label>
+            </div>
+            <div class="small-9 columns">
+              <input type="submit"  value="Reset Password User" >
+            </div>
+          </div>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{{data.id}}" />
+   </form>
+
+{% endblock %}

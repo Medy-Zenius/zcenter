@@ -1,0 +1,39 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <div>
+        <h3 align="center">Klik Nomer = Hapus siswa !</h3>
+        <h3 align="center">ID Wali: {{idwali}} </h3>
+         <div class="row" align="center">
+         <form method="POST" action="/hapus-siswa-wali-data">
+
+                    <table>
+                        <thead>
+                            <th>Nomer</th>
+                            <th>ZEN</th>
+                            <th>Nama</th>
+                        </thead>
+
+                        <tbody>
+                        {% for siswa in siswas %}
+                            <tr>
+                                <td>
+                                    <input type="submit" value="{{siswa.nomer}}" name="nomer">
+                                </td>
+                                <td>{{siswa.zen}}</td>
+                                <td>{{siswa.name}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                <div>
+                        <input type="hidden" value="{{idwali}}" name="id">
+                </div>
+           </form>
+        </div>
+    </div>
+
+{% endblock %}
+

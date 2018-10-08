@@ -1,0 +1,68 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <br>
+    <div>
+        <form action="/input-presence" method="POST">
+            <div class="large-12 columns">
+                <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kelas</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{kelas}}" disabled >
+                        <input type="hidden" value="{{kelas}}" name="kelas">
+                    </div>
+                </div>
+             </div>
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kode</label>
+                    </div>
+
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{code}}" disabled >
+                        <input type="hidden" value="{{code}}" name="code">
+                    </div>
+
+                </div>
+             </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tutor</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{tutor}}" disabled >
+                        <input type="hidden" value="{{tutor}}" name="tutor">
+                    </div>
+                </div>
+             </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Waktu</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  value="{{date}}" disabled >
+                        <input type="hidden" value="{{date}}" name="date">
+                    </div>
+                </div>
+             </div>
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">ZEN</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="" name="notes" tabindex="1" >
+                    </div>
+                    <div class="large-8 columns">
+                        <input type="submit" value="SUBMIT"  tabindex="2" >
+                    </div>
+                </div>
+             </div>
+        </form>
+    </div>
+
+{% endblock %}

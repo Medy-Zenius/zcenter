@@ -1,0 +1,34 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+        <br>
+        <h3 align="center">Data Transaksi</h3>
+        <p align="center">Nomer Zenius {{notes}}</p>
+        <h3 align="center">Klik Ntrans untuk mencetak kuitansi ! </h3>
+        <div class="row" align="center">
+        <form method="POST" action="/keu-cetak-kuitansi" target="_blank">
+        <table>
+            <thead>
+                <th>NTrans</th>
+                <th>Cicilan ke</th>
+                <th>Sejumlah</th>
+                <th>Tanggal Transaksi</th>
+                <th>Penerima</th>
+            </thead>
+
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td><input type="submit" value="{{transaction.notrans}}" name="notrans"></td>
+                        <td>{{transaction.cicilan}}</td>
+                        <td>Rp. {{transaction.biaya}} ,-</td>
+                        <td>{{transaction.dtrans}}</td>
+                        <td>{{transaction.id}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            <input type="hidden" name="sisa" value="{{sisa}}" />
+        <form>
+        </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <div>
+        <form action="/input-student" method="POST">
+
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Kode Kelas</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  name"kode" value="{{kode}}" disabled>
+                    </div>
+                    <div class="large-8 columns" style="visibility:hidden">
+                        <input type="text" value="{{kode}}" name="kode">
+                    </div>
+                </div>
+              </div>
+             {% for class in classes %}
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Kelas</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="{{class.level}}" disabled>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+              </div>
+              <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Waktu (Hari)</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{class.hari}}" disabled>
+                    </div>
+                </div>
+              </div>
+              <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Keterangan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text" value="{{class.keterangan}}" disabled>
+                    </div>
+                </div>
+               </div>
+         {% endfor %}
+
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Zen</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="" name="notes" placeholder="ZEN" tabindex="1">
+                    </div>
+                    <div class="large-8 columns">
+                        <input  type="submit" value="SUBMIT" tabindex="2">
+                    </div>
+                </div>
+              </div>
+
+        </form>
+    </div>
+{% endblock %}

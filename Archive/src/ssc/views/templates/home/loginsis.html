@@ -1,0 +1,39 @@
+{% extends "ssc/views/templates/base1.html" %}
+{% block content %}
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+
+    <main>
+
+        <!-- Contact us -->
+        <section class="skew skew__deg-2 skew__deg-2-m-8 skew__deg-3_before-inset">
+            <div class="skew_sub-1 skew_sub-1-m-8">
+                <div class="skew_sub-2">
+                    <div class="skew_bg bg-white"></div>
+                </div>
+            </div>
+            <div class="skew_cnt container contain-wrap well-4 well-4--inset-2">
+                <br>
+                <h2>LOGIN SISWA ZENIUS</h2>
+                <div class="row">
+                    <form class="form-inline" method="POST" action="/login-siswa">
+                      <div class="form-group">
+                        <label for="nomer">Nomer Zenius:</label>
+                        <input type="text" class="form-control" name="zen">
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" name="pw">
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+             </div>
+        </section>
+        <!-- END Contact us -->
+
+
+
+    </main>
+{% endblock %}

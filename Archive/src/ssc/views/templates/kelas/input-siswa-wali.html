@@ -1,0 +1,46 @@
+{% extends "ssc/views/templates/base.html" %}
+{% block content %}
+    <div>
+        <form action="/input-siswa-wali-data" method="POST">
+
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Nomer Mentor</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"   value="{{nomer}}" disabled>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+              </div>
+              <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">ID Mentor</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="{{idwali}}" disabled>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+              </div>
+
+             <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                        <label for="right-label" class="right inline">Zen</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text" value="" name="notes" placeholder="ZEN" tabindex="1">
+                    </div>
+                    <div class="large-8 columns">
+                        <input  type="submit" value="SUBMIT" tabindex="2">
+                    </div>
+                </div>
+              </div>
+              <input type="hidden" value="{{nomer}}" name="nomer">
+              <input type="hidden" value="{{idwali}}" name="idwali">
+        </form>
+    </div>
+{% endblock %}

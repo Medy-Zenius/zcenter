@@ -1,0 +1,178 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <div>
+        <form action="/update-student" method="POST">
+            <h3>Siswa</h3>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">ZEN</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  value="{{student.notes}}" disabled>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nama</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="nama" value="{{student.name}}"  tabindex="1">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tempat Lahir</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pbirth" value="{{student.pbirth}}"  tabindex="2">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tgl Lahir</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="dbirth" value="{{student.dbirth}}"  tabindex="3">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Alamat</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="address" value="{{student.address}}"  tabindex="4">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">No. Telpon</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="phone" value="{{student.phone}}"  tabindex="5">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Email</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="email" value="{{student.email}}"  tabindex="6">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kelas</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="level" value="{{student.level}}"  tabindex="7">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kode Jurusan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="major" value="{{student.major}}"  tabindex="8">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Asal Sekolah</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="school" value="{{student.school}}"  tabindex="9">
+                    </div>
+                </div>
+            </div>
+
+            <h3>Orang Tua</h3>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nama Ortu</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pname" value="{{student.pname}}"  tabindex="12">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Alamat Ortu</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="paddress" value="{{student.paddress}}"  tabindex="13">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nomer Telpon</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pphone" value="{{student.pphone}}"  tabindex="14">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Email</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pemail" value="{{student.pemail}}"  tabindex="15">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Pekerjaan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pjob" value="{{student.pjob}}"  tabindex="16">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Password</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pass" value="{{student.pass}}"  tabindex="16">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="large-10 columns" align="center">
+                <input  type="submit" value="Update Data Pribadi" tabindex="17">
+              </div>
+            </div>
+        <input type="hidden" value="{{student.notes}}" name="notes">
+        </form>
+    </div>
+{% endblock %}

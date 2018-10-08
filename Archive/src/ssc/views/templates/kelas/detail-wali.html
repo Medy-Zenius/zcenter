@@ -1,0 +1,138 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+   <br>
+
+    <div>
+        <p align="center">Lihat/Edit Wali </p>
+        <form action="/update-wali" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nomer</label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input type="text"  value="{{wali.nomer}}" disabled>
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Nama</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="nama" value="{{wali.name}}"  tabindex="1">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Alamat</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="alamat" value="{{wali.alamat}}"  tabindex="2">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tempat Lahir</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="tempatlahir" value="{{wali.tempatlahir}}"  tabindex="3">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Tanggal Lahir</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="tanggallahir" value="{{wali.tanggallahir}}"  tabindex="4">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">No. Telpon</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="telpon" value="{{wali.telpon}}"  tabindex="5">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Email</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="email" value="{{wali.email}}"  tabindex="6">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Pendidikan</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="pendidikan" value="{{wali.pendidikan}}"  tabindex="7">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">Kode Cabang</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="kocab" value="{{wali.scode}}"  tabindex="8">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline">ID</label>
+                    </div>
+                    <div class="large-10 columns">
+                        <input type="text"  name="id" value="{{wali.id}}"  tabindex="9">
+                    </div>
+                </div>
+            </div>
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input  type="submit" value="Update Mentor" tabindex="10">
+                    </div>
+                    <div class="large-8 columns">
+                </div>
+            </div>
+            <input type="hidden" value="{{wali.nomer}}" name="nomer">
+        </form>
+        <form action="/resetpw-wali" method="POST">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="large-2 columns">
+                      <label for="right-label" class="right inline"></label>
+                    </div>
+                    <div class="large-2 columns">
+                        <input  type="submit" value="Reset Password Mentor" tabindex="11">
+                    </div>
+                    <div class="large-8 columns"></div>
+                </div>
+            </div>
+            <input type="hidden" value="{{wali.nomer}}" name="nomer">
+        </form>
+    </div>
+{% endblock %}

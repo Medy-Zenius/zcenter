@@ -1,0 +1,37 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+        <br>
+        <h3 align="center">Data Transaksi</h3>
+        <p align="center">ZEN  {{notes}}</p>
+        <p align="center">{{name}}</p>
+        {% for jml in jumlah %}
+            <p align="center">Total transaksi Rp. {{jml.sum}} ,-</p>
+        {% endfor %}
+
+        <div class="row" align="center">
+        <table>
+            <thead>
+                <th>NTrans</th>
+                <th>Cicilan ke</th>
+                <th>Sejumlah</th>
+                <th>Tanggal Transaksi</th>
+                <th>Penerima</th>
+            </thead>
+
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td align="center">{{transaction.notrans}}</td>
+                        <td align="center">{{transaction.cicilan}}</td>
+                        <td align="center">Rp. {{transaction.biaya}} ,-</td>
+                        <td align="center">{{transaction.dtrans}}</td>
+                        <td align="center">{{transaction.id}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        </div>
+
+{% endblock %}

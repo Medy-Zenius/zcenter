@@ -1,0 +1,28 @@
+{% extends "ssc/views/templates/base.html" %}
+
+{% block content %}
+    <br>
+    <h3 align="center">Lesson Plan - {{keterangan}}</h3>
+    <p align="center">Klik Kode untuk Rincian per Bab !</p>
+    <div class="row" align="center">
+        <table>
+            <thead>
+                <th>Kode</th>
+                <th>Bab Pelajaran</th>
+            </thead>
+
+            <tbody>
+                <form method="POST" action="{{action}}" >
+                {% for bab in babs %}
+                    <tr>
+                        <td>
+                           <input type="submit" value="{{bab.kode}}" name="kode">
+                        </td>
+                        <td>{{bab.keterangan}}</td>
+                    </tr>
+                {% endfor %}
+                <form>
+            </tbody>
+        </table>
+      </div>
+{% endblock %}
