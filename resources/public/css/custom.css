@@ -1,0 +1,44 @@
+.slider {
+	height:580px;
+	margin-top:-240px;
+}
+
+.slider__inner img {
+	height:330px;
+}
+
+.landing-text h4{
+	color:#586077;
+}
+
+.landing-text p {
+	font-size:16px;
+	font-family:'Open Sans', sans-serif;
+	font-weight: 400;
+	line-height: 25px;
+	text-align: justify;
+}
+
+.slider-list {
+	font-size:20px;
+	font-weight: bold;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding:10px;
+}
+
+.slider-name {
+	font-size:20px;
+	font-weight: bold;
+	margin-top:10px;
+	font-family:'Open Sans', sans-serif;
+}
+
+.slider__inner h5{
+	margin:5px 0 10px 0;
+}
+
+.owl-carousel .item img{
+	height:160px;
+	object-fit:cover;
+}
